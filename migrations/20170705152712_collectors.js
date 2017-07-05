@@ -1,7 +1,7 @@
 "use strict";
 
 exports.up = (knex, Promise) => {
-  return knex.schema.createTable('artists', table => {
+  return knex.schema.createTable('collectors', table => {
     table.increments();
     table.text('bio');
     table.integer('user_id')
@@ -14,5 +14,5 @@ exports.up = (knex, Promise) => {
 };
 
 exports.down = (knex, Promise) => {
-  return knex.schema.dropTable('artists');
+  return knex.schema.dropTable('collectors');
 };
