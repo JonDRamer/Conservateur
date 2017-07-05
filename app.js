@@ -11,7 +11,7 @@ const curatorsRouter = require('./routes/curators');
 const consultationsRouter = require('./routes/consultations');
 const usersRouter = require('./routes/users');
 const paintingsRouter = require('./routes/paintings');
-const port = process.ENV || 3000;
+const port = process.env.PORT || 3000;
 
 const app = express();
 

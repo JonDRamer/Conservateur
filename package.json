@@ -21,9 +21,11 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "knex": "^0.13.0",
-    "method-override": "^2.3.9"
+    "method-override": "^2.3.9",
+    "pg": "^6.4.0"
   },
   "devDependencies": {
+    "knex": "^0.13.0",
     "morgan": "^1.8.2"
   }
 }
