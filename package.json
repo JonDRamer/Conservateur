@@ -2,7 +2,7 @@
   "name": "Conservator",
   "version": "1.0.0",
   "description": "Conservator is a way for aspiring art collectors to receive curated artwork that fits their budget and style. They simply fill out a form with their requirements and an art consultant sends them recommendations of what they should buy. Once they find that perfect piece they can purchase the work through the site.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/JonDRamer/Conservator/issues"
   },
-  "homepage": "https://github.com/JonDRamer/Conservator#readme"
+  "homepage": "https://github.com/JonDRamer/Conservator#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "knex": "^0.13.0",
+    "method-override": "^2.3.9"
+  },
+  "devDependencies": {
+    "morgan": "^1.8.2"
+  }
 }
