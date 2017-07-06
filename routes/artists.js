@@ -35,6 +35,13 @@ router.route('/')
   })
 
 router.route('/:artist_id')
+  .get((req, res, next) => {
+    knex('artists')
+      .where('id', req.params.artist_id)
+      .first()
+      .then(artist => res.json(artist))
+      .catch(err => next(err));
+  })
 
 
 
