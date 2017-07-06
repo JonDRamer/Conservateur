@@ -31,10 +31,15 @@ router.route('/')
           .returning('*', users)
           .then(collectors => res.json(`${users[0].first_name}'s Bio: ${collectors[0].bio} was successfully added to the collectors table.`))
       })
+      .catch(err => next(err));
   })
 router.route('/:collector_id')
   .get((req, res, next) => {
-
+    knex('collectors')
+      .where('id', req.params.collector_id)
+      .first()
+      .then(collector => res.json(collector))
+      .catch(err => next(err));
   })
   .patch((req, res, next) => {
 
