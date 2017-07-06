@@ -13,8 +13,8 @@ router.route('/')
   .post((req, res, next) => {
     knex('users')
       .insert(req.body)
-      .returning('id')
-      .then((id) => res.json(id))
+      .returning('*')
+      .then(users => res.json(users[0]))
       .catch(err => next(err));
   });
 
