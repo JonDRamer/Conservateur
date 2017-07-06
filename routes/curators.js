@@ -33,10 +33,16 @@ router.route('/')
           .then(curators => res.json(`${users[0].first_name} ${users[0].last_name}'s bio: ${curators[0].bio} and rating: ${curators[0].rating} were successfully added to the curator's table.`))
           .catch(err => next(err));
       })
-  })
-
+  });
 
 router.route('/:curator_id')
+  .get((req, res, next) => {
+    knex('curators')
+      .where('id', req.params.curator_id)
+      .first()
+      .then(curator => res.json(curator))
+      .catch(err => next(err));
+  })
 
 
 
