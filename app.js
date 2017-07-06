@@ -6,8 +6,8 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const usersRouter = require('./routes/users');
+const collectorsRouter = require('./routes/collectors');
 // const artistsRouter = require('./routes/artists');
-// const collectorsRouter = require('./routes/collectors');
 // const curatorsRouter = require('./routes/curators');
 // const consultationsRouter = require('./routes/consultations');
 // const paintingsRouter = require('./routes/paintings');
@@ -30,8 +30,8 @@ app.get('/', (req, res) => {
 })
 
 app.use('/users', usersRouter);
+app.use('/collectors', collectorsRouter);
 // app.use('/artists', artistsRouter);
-// app.use('/collectors', collectorsRouter);
 // app.use('/curators', curatorsRouter);
 // app.use('/consultations', consultationsRouter);
 // app.use('/paintings', paintingsRouter);
