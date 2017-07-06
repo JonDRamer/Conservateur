@@ -42,6 +42,14 @@ router.route('/:artist_id')
       .then(artist => res.json(artist))
       .catch(err => next(err));
   })
+  .patch((req, res, next) => {
+    knex('artists')
+      .update(req.body)
+      .where('id', req.params.artist_id)
+      .returning('*')
+      .then(artists => res.json(artists[0]))
+      .catch(err => next(err));
+  })
 
 
 
