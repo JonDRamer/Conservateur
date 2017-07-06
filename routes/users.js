@@ -18,4 +18,14 @@ router.route('/')
       .catch(err => next(err));
   });
 
-module.exports = router;
+router.route('/:user_id')
+  .patch((req, res) => {
+    knex('users')
+      .update(req.body)
+      .where('id', req.params.user_id)
+      .returning('*')
+      .then(user => res.send(user[0]))
+      .catch(err => next(err));
+  });
+
+module.exports = router;;
