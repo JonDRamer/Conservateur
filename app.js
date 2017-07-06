@@ -8,8 +8,7 @@ const methodOverride = require('method-override');
 const usersRouter = require('./routes/users');
 const collectorsRouter = require('./routes/collectors');
 const artistsRouter = require('./routes/artists');
-// const curatorsRouter = require('./routes/curators');
-// const consultationsRouter = require('./routes/consultations');
+const curatorsRouter = require('./routes/curators');
 // const paintingsRouter = require('./routes/paintings');
 const port = process.env.PORT || 3000;
 
@@ -32,8 +31,7 @@ app.get('/', (req, res) => {
 app.use('/users', usersRouter);
 app.use('/collectors', collectorsRouter);
 app.use('/artists', artistsRouter);
-// app.use('/curators', curatorsRouter);
-// app.use('/consultations', consultationsRouter);
+app.use('/curators', curatorsRouter);
 // app.use('/paintings', paintingsRouter);
 
 app.listen(port, () => {
