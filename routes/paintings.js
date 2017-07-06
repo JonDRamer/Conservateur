@@ -35,5 +35,13 @@ router.route('/:painting_id')
       .then(paintings => res.json(paintings[0]))
       .catch(err => next(err));
   })
+  .delete((req, res, next) => {
+    knex('paintings')
+      .del()
+      .where('id', req.params.painting_id)
+      .returning('*')
+      .then(paintings => res.json(`${paintings[0].title} was successfully deleted.`))
+      .catch(err => next(err));
+  });
 
 module.exports = router;;
