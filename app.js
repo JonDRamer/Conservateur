@@ -9,7 +9,7 @@ const usersRouter = require('./routes/users');
 const collectorsRouter = require('./routes/collectors');
 const artistsRouter = require('./routes/artists');
 const curatorsRouter = require('./routes/curators');
-// const paintingsRouter = require('./routes/paintings');
+const paintingsRouter = require('./routes/paintings');
 const port = process.env.PORT || 3000;
 
 const app = express();
@@ -32,7 +32,7 @@ app.use('/users', usersRouter);
 app.use('/collectors', collectorsRouter);
 app.use('/artists', artistsRouter);
 app.use('/curators', curatorsRouter);
-// app.use('/paintings', paintingsRouter);
+app.use('/paintings', paintingsRouter);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);

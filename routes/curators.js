@@ -51,6 +51,19 @@ router.route('/:curator_id')
       .then(curators => res.json(curators[0]))
       .catch(err => next(err));
   })
+  .delete((req, res, next) => {
+    knex('curators')
+      .del()
+      .where('id', req.params.curator_id)
+      .returning('*')
+      .then((curators) => {
+        knex('users')
+          .where('id', curators[0].user_id)
+          .first()
+          .then(user => res.json(`${user.first_name} ${user.last_name}'s curator record was successfully deleted.`));
+      })
+      .catch(err => next(err));
+  });
 
 
 
