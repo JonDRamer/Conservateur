@@ -24,8 +24,16 @@ router.route('/:user_id')
       .update(req.body)
       .where('id', req.params.user_id)
       .returning('*')
-      .then(user => res.send(user[0]))
+      .then(users => res.json(users[0]))
+      .catch(err => next(err));
+  })
+  .delete((req, res) => {
+    knex('users')
+      .del()
+      .where('id', req.params.user_id)
+      .returning('*')
+      .then(users => res.send(`${users[0].first_name} ${users[0].last_name} was successfully deleted`))
       .catch(err => next(err));
   });
 
-module.exports = router;;
+module.exports = router;
