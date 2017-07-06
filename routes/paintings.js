@@ -20,5 +20,12 @@ router.route('/')
 
 
 router.route('/:painting_id')
+  .get((req, res, next) => {
+    knex('paintings')
+      .where('id', req.params.painting_id)
+      .first()
+      .then(painting => res.json(painting))
+      .catch(err => next(err));
+  })
 
 module.exports = router;
