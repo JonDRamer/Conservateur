@@ -42,7 +42,12 @@ router.route('/:collector_id')
       .catch(err => next(err));
   })
   .patch((req, res, next) => {
-
+    knex('collectors')
+      .update(req.body)
+      .where('id', req.params.collector_id)
+      .returning('*')
+      .then(collectors => res.json(collectors[0]))
+      .catch(err => next(err));
   })
   .delete((req, res, next) => {
 
