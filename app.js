@@ -11,6 +11,8 @@ const artistsRouter = require('./routes/artists');
 const curatorsRouter = require('./routes/curators');
 const paintingsRouter = require('./routes/paintings');
 const authRouter = require('./routes/auth');
+const cookieParser = require('cookie-parser');
+const session = require('cookie-session');
 const port = process.env.PORT || 3000;
 
 const app = express();
