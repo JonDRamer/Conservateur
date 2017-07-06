@@ -43,6 +43,14 @@ router.route('/:curator_id')
       .then(curator => res.json(curator))
       .catch(err => next(err));
   })
+  .patch((req, res, next) => {
+    knex('curators')
+      .update(req.body)
+      .where('id', req.params.curator_id)
+      .returning('*')
+      .then(curators => res.json(curators[0]))
+      .catch(err => next(err));
+  })
 
 
 
