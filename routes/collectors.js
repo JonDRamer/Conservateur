@@ -50,7 +50,17 @@ router.route('/:collector_id')
       .catch(err => next(err));
   })
   .delete((req, res, next) => {
-
-  })
+    knex('collectors')
+      .del()
+      .where('id', req.params.collector_id)
+      .returning('*')
+      .then((collectors) => {
+        knex('users')
+          .where('id', collectors[0].user_id)
+          .first()
+          .then(user => res.json(`${user.first_name} ${user.last_name}'s bio was successfully deleted.`));
+      })
+      .catch(err => next(err));
+  });
 
 module.exports = router;
