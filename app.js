@@ -23,6 +23,12 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(morgan('tiny'));
 app.use(methodOverride('_method'));
+app.use(cookieParser());
+app.use(session({
+  name: 'session',
+  secret: 'userId',
+  maxAge: 24 * 60 * 60 * 1000
+}));
 
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.static(path.join(__dirname, '/../', 'node_modules')));
