@@ -31,9 +31,10 @@ router.route('/register')
         })
         .then((user) => {
           req.session.userId = user.id;
-          res.render('statics/home', {
-            loggedIn: true
-          });
+          res.json(req.session);
+          // res.render('statics/home', {
+          //   loggedIn: true
+          // });
         })
         .catch(err => next(new Error(err)));
     } else {
@@ -44,8 +45,39 @@ router.route('/register')
   });
 
 router.route('/login')
+  .get((req, res, next) => {
+    res.render('auth/login')
+  })
+  .post((req, res, next) => {
+    knex('users')
+      .where('email', req.body.email)
+      .first()
+      .then((user) => {
+        if (user) {
+          let matches = bcrypt.compareSync(req.body.password_digest, user.password_digest);
+          if (matches) {
+            req.session.userId = user.id;
+            res.json(req.session);
+            // res.render('statics/home', {
+            //   loggedIn: true
+            // });
+          }
+        } else {
+          res.redirect('/register');
+        }
+      })
+      .catch(err => {
+        res.locals.error = err
+        res.send(err);
+      });
+  });
 
 router.route('/logout')
+  .get((req, res, next) => {
+    req.session = null;
+    res.json(req.session);
+    // res.redirect('/');
+  });
 
 
 module.exports = router;
