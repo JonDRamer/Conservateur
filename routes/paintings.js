@@ -10,6 +10,13 @@ router.route('/')
       .then(paintings => res.json(paintings))
       .catch(err => next(err));
   })
+  .post((req, res, next) => {
+    knex('paintings')
+      .insert(req.body)
+      .returning('*')
+      .then(paintings => res.json(paintings[0]))
+      .catch(err => next(err));
+  })
 
 
 router.route('/:painting_id')
