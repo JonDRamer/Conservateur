@@ -19,7 +19,13 @@ router.route('/')
   });
 
 router.route('/:user_id')
-  .patch((req, res) => {
+  .get((req, res, next) => {
+    knex('users')
+      .where('id', req.params.user_id)
+      .then(user => res.json(user))
+      .catch(err => next(err));
+  })
+  .patch((req, res, next) => {
     knex('users')
       .update(req.body)
       .where('id', req.params.user_id)
@@ -27,7 +33,7 @@ router.route('/:user_id')
       .then(users => res.json(users[0]))
       .catch(err => next(err));
   })
-  .delete((req, res) => {
+  .delete((req, res, next) => {
     knex('users')
       .del()
       .where('id', req.params.user_id)
