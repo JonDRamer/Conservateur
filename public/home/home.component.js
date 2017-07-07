@@ -4,10 +4,10 @@
   angular.module("app")
     .component("home", {
       controller: controller,
-      templateUrl: './home.template.html'
+      templateUrl: './home/home.template.html'
     });
 
-  contoller.$inject = ['$state'];
+  controller.$inject = ['$state'];
 
   function controller($state) {
     const vm = this;
