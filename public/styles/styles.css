@@ -1,51 +1,98 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-
-/* HTML5 display-role reset for older browsers */
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-
 /* YOUR CSS STARTS HERE */
+
+.navbar {
+  margin: 0;
+}
+
+.container {
+  width: 100vw;
+}
 
 header {
   display: flex;
   justify-content: flex-start;
-  flex-direction: row wrap;
+  flex-flow: row wrap;
   align-items: center;
 }
 
 .logo {
-  height: 40px;
+  height: 15vh;
+}
+
+h1 {
+  line-height: 100%;
+}
+
+.hero {
+  height: 100vh;
+  background-image: url("../assets/hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.description {
+  background-color: #D2B48C;
+}
+
+.build {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  text-align: center;
+  font-size: 40px;
+  color: white;
+}
+
+.curated {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+}
+
+.learn {
+  margin-bottom: 5vh;
+}
+
+.consultant {
+  padding-top: 3vh;
+  font-size: 30px;
+}
+
+.cta {
+  padding-top: 5vh;
+}
+
+.featuredArtist {
+  /*display: flex;
+  justify-content: center;
+  flex-flow: row wrap;*/
+  width: 100vw;
+  height: 50vh;
+}
+
+.spotlight {
+  /*width: 66%;*/
+  height: 50vh;
+  background-image: url("../assets/spotlight.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.artist {
+  /*width: 33%;*/
+  height: 50vh;
+  background-image: url("../assets/artist.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+footer {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  border-top: 2px solid black;
+  height: 10vh;
+  text-align: center;
 }
