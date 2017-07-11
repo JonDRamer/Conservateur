@@ -8,7 +8,7 @@
 
   function config($stateProvider, $urlServiceProvider, $locationProvider) {
 
-    $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode(true);
 
     $urlServiceProvider.rules.otherwise({
       state: 'home'

@@ -14,7 +14,6 @@ exports.seed = function(knex, Promise) {
             first_name: 'Kati',
             last_name: 'Ramer',
             artist: 'true',
-            collector: 'true',
             curator: 'true'
           },
           {
@@ -23,7 +22,6 @@ exports.seed = function(knex, Promise) {
             first_name: 'Katie',
             last_name: 'Craig',
             artist: 'true',
-            collector: 'false',
             curator: 'false'
           },
           {
@@ -32,7 +30,6 @@ exports.seed = function(knex, Promise) {
             first_name: 'Courtney',
             last_name: 'Cleveland',
             artist: 'false',
-            collector: 'false',
             curator: 'true'
           },
           {
@@ -41,7 +38,6 @@ exports.seed = function(knex, Promise) {
             first_name: 'Georgia',
             last_name: "O'Keeffe",
             artist: 'false',
-            collector: 'true',
             curator: 'false'
           }
         ]);

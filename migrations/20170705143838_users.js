@@ -13,7 +13,6 @@ exports.up = (knex, Promise) => {
     table.string('last_name')
       .notNullable();
     table.boolean('artist');
-    table.boolean('collector');
     table.boolean('curator');
   });
 };
