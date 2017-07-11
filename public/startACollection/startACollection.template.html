@@ -164,7 +164,7 @@
       </div>
   </div>
 
-  <!--      Customer URL       -->
+  <!--      Customer Images       -->
   <div  ng-class="{'has-error' : $ctrl.consultation.images.$dirty && $ctrl.consultation.images.$invalid,
                   'has-success': $ctrl.consultation.images.$valid}">
       <label for="images">Upload Images</label>
@@ -176,11 +176,23 @@
       </div>
   </div>
 
+  <!--      Customer Budget       -->
+  <div  ng-class="{'has-error' : $ctrl.consultation.budget.$dirty && $ctrl.consultation.budget.$invalid,
+                  'has-success': $ctrl.consultation.budget.$valid}">
+      <label for="budget">Budget</label>
+      <input name="budget" id="budget" class="form-control" ng-model="$ctrl.customer.budget" placeholder="$200.00" required>
+      <div class="error" ng-show="$ctrl.consultation.budget.$dirty && $ctrl.consultation.budget.$invalid">
+          <small class="error" ng-show="$ctrl.consultation.budget.$error.required">
+              Budget is a required field
+          </small>
+      </div>
+  </div>
+
 
   <!---------   SUBMIT BUTTON    --------->
   <div class="form-group">
-      <button ng-click="$ctrl.createPost(newPost)" ng-disabled="$ctrl.newPost.$invalid" type="submit" class="btn btn-primary">
-        Create Post
+      <button ng-disabled="$ctrl.consultation.$invalid" type="submit" class="btn btn-primary">
+        Submit
       </button>
   </div>
 </form>
