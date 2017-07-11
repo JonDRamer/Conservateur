@@ -25,6 +25,12 @@
         name: 'howItWorks',
         url: '/How-It-Works',
         component: 'howItWorks'
+      })
+    $stateProvider
+      .state({
+        name: 'startACollection',
+        url: '/Start-A-Collection',
+        component: 'startACollection'
       });
 
   }

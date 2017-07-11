@@ -63,6 +63,12 @@ h1 {
   padding-top: 5vh;
 }
 
+.startACollectionHero {
+  height: 100vh;
+  background-image: url("../assets/startACollection.jpg");
+  background-size: cover;
+}
+
 .howItWorksHero {
   height: 100vh;
   background-image: url("../assets/how-it-works-placeholder.png");

@@ -1,0 +1,154 @@
+<header class="container">
+  <div class="row">
+    <img class="logo col-xs-3" src="./assets/logo.png" alt="Brand Logo">
+    <h1 class="col-xs-9">CONSERVATEUR</h1>
+    <h3 class="col-xs-9">BUILD AN ORIGINAL COLLECTION</h3>
+  </div>
+</header>
+
+<!-- NAV  -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ui-sref="home">HOME</a></li>
+        <li><a href="#">HOW IT WORKS</a></li>
+        <li><a href="#">TESTIMONIALS</a></li>
+        <li><a href="#">START A COLLECTION</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!-- HERO IMAGE -->
+<section class="startACollectionHero">
+  <!-- HERO IMAGE LIVES HERE -->
+</section>
+
+<!-- CONSULTATION FORM -->
+<form name="$ctrl.consultation" novalidate>
+
+  <!--      Customer Name       -->
+  <div  ng-class="{'has-error' : $ctrl.consultation.name.$dirty && $ctrl.consultation.name.$invalid,
+                  'has-success': $ctrl.consultation.name.$valid}">
+      <label for="name">Name</label>
+      <input name="name" id="name" class="form-control" ng-model="$ctrl.customer.name" ng-minlength="3" ng-maxlength="20" required>
+      <div class="error" ng-show="$ctrl.consultation.name.$dirty && $ctrl.consultation.name.$invalid">
+          <small class="error" ng-show="$ctrl.consultation.name.$error.required">
+              Name is a required field
+          </small>
+          <small class="error" ng-show="$ctrl.consultation.name.$error.minlength">
+              Name must be at least 3 characters
+          </small>
+          <small class="error" ng-show="$ctrl.consultation.name.$error.maxlength">
+              Name cannot be more that 20 characters
+          </small>
+      </div>
+  </div>
+
+  <!--      Customer Email       -->
+  <div  ng-class="{'has-error' : $ctrl.consultation.email.$dirty && $ctrl.consultation.email.$invalid,
+                  'has-success': $ctrl.consultation.email.$valid}">
+      <label for="email">Email</label>
+      <input name="email" id="email" class="form-control" ng-model="$ctrl.customer.email" ng-minlength="10" ng-maxlength="40" required>
+      <div class="error" ng-show="$ctrl.consultation.email.$dirty && $ctrl.consultation.email.$invalid">
+          <small class="error" ng-show="$ctrl.consultation.email.$error.required">
+              Email is a required field
+          </small>
+          <small class="error" ng-show="$ctrl.consultation.email.$error.minlength">
+              Email must be at least 10 characters
+          </small>
+          <small class="error" ng-show="$ctrl.consultation.email.$error.maxlength">
+              Email cannot be more that 40 characters
+          </small>
+      </div>
+  </div>
+
+  <!--      Post Description       -->
+  <div ng-class="{'has-error' : $ctrl.newPost.body.$dirty && $ctrl.newPost.body.$invalid,
+                  'has-success': $ctrl.newPost.body.$valid}">
+      <label for="body">Body</label>
+      <textarea name="body" id="body" class="form-control" ng-model="$ctrl.post.body" ng-minlength="3" required></textarea>
+      <div class="error" ng-show="$ctrl.newPost.body.$dirty && $ctrl.newPost.body.$invalid">
+          <small class="error" ng-show="$ctrl.newPost.body.$error.required">
+              Post body is required
+          </small>
+          <small class="error" ng-show="$ctrl.newPost.body.$error.minlength">
+              Post body is required to be at least 3 characters
+          </small>
+      </div>
+  </div>
+
+  <!--      Post Author       -->
+  <div ng-class="{'has-error' : $ctrl.newPost.author.$dirty && $ctrl.newPost.author.$invalid,
+                  'has-success': $ctrl.newPost.author.$valid}">
+      <label for="author">Author</label>
+      <input name="author" id="author" class="form-control" ng-model="$ctrl.post.author" ng-minlength="3" ng-maxlength="20" required>
+      <div class="error" ng-show="$ctrl.newPost.author.$dirty && $ctrl.newPost.author.$invalid">
+          <small class="error" ng-show="$ctrl.newPost.author.$error.required">
+              Author name is required.
+          </small>
+          <small class="error" ng-show="$ctrl.newPost.author.$error.minlength">
+              Author name is required to be at least 3 characters
+          </small>
+          <small class="error" ng-show="$ctrl.newPost.author.$error.maxlength">
+              Author name cannot be longer than 20 characters
+          </small>
+      </div>
+  </div>
+
+  <!--      Post ImageUrl       -->
+  <div ng-class="{'has-error' : $ctrl.newPost.image_url.$dirty && $ctrl.newPost.image_url.$invalid,
+                  'has-success': $ctrl.newPost.image_url.$valid}">
+      <label for="image-url">Image URL</label>
+      <input name="image_url" id="image-url" class="form-control" ng-model="$ctrl.post.image_url" ng-minlength="3" required>
+      <div class="error" ng-show="$ctrl.newPost.image_url.$dirty && $ctrl.newPost.image_url.$invalid">
+          <small class="error" ng-show="$ctrl.newPost.image_url.$error.required">
+              Image URL is required.
+          </small>
+          <small class="error" ng-show="$ctrl.newPost.image_url.$error.minlength">
+              Image URL is required to be at least 3 characters
+          </small>
+      </div>
+  </div>
+
+  <!---------   SUBMIT BUTTON    --------->
+  <div class="form-group">
+      <button ng-click="$ctrl.createPost(newPost)" ng-disabled="$ctrl.newPost.$invalid" type="submit" class="btn btn-primary">
+        Create Post
+      </button>
+  </div>
+</form>
+
+
+<!-- PAYPAL BUTTON -->
+  <!-- <section class="paypal">
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+      </form>
+  </section> -->
+
+
+<!-- FOOTER -->
+<div class="container">
+  <footer class="row">
+    <h3 class="col-xs-12 col-sm-6 col-lg-2 col-lg-offset-1">CONTACT/SUPPORT</h3>
+    <h3 class="col-xs-12 col-sm-6 col-lg-2">LOGIN</h3>
+    <h3 class="col-xs-12 col-sm-6 col-lg-2">FAQ</h3>
+    <h3 class="col-xs-12 col-sm-6 col-lg-2">PRESS</h3>
+    <h3 class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-2 col-lg-offset-0">ARTIST INQUIRIES</h3>
+  </footer>
+</div>
