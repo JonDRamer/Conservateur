@@ -164,6 +164,18 @@
       </div>
   </div>
 
+  <!--      Customer URL       -->
+  <div  ng-class="{'has-error' : $ctrl.consultation.images.$dirty && $ctrl.consultation.images.$invalid,
+                  'has-success': $ctrl.consultation.images.$valid}">
+      <label for="images">Upload Images</label>
+      <input name="images" id="images" class="form-control" ng-model="$ctrl.customer.images" required>
+      <div class="error" ng-show="$ctrl.consultation.images.$dirty && $ctrl.consultation.images.$invalid">
+          <small class="error" ng-show="$ctrl.consultation.images.$error.required">
+              Image is a required field
+          </small>
+      </div>
+  </div>
+
 
   <!---------   SUBMIT BUTTON    --------->
   <div class="form-group">
