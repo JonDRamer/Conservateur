@@ -63,6 +63,13 @@ h1 {
   padding-top: 5vh;
 }
 
+.howItWorksHero {
+  height: 100vh;
+  background-image: url("../assets/how-it-works-placeholder.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .howItWorks {
   height: 50vh;
   border: 1px solid red;
