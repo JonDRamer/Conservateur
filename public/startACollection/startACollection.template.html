@@ -36,11 +36,12 @@
 </section>
 
 <!-- CONSULTATION FORM -->
-<form name="$ctrl.consultation" novalidate>
+<form class="container" name="$ctrl.consultation" novalidate>
 
   <!--      Customer Name       -->
-  <div  ng-class="{'has-error' : $ctrl.consultation.name.$dirty && $ctrl.consultation.name.$invalid,
+  <div class="row" ng-class="{'has-error' : $ctrl.consultation.name.$dirty && $ctrl.consultation.name.$invalid,
                   'has-success': $ctrl.consultation.name.$valid}">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
       <label for="name">Name</label>
       <input name="name" id="name" class="form-control" ng-model="$ctrl.customer.name" ng-minlength="3" ng-maxlength="20" required>
       <div class="error" ng-show="$ctrl.consultation.name.$dirty && $ctrl.consultation.name.$invalid">
@@ -54,11 +55,13 @@
               Name cannot be more that 20 characters
           </small>
       </div>
+    </div>
   </div>
 
   <!--      Customer Email       -->
-  <div  ng-class="{'has-error' : $ctrl.consultation.email.$dirty && $ctrl.consultation.email.$invalid,
+  <div class="row" ng-class="{'has-error' : $ctrl.consultation.email.$dirty && $ctrl.consultation.email.$invalid,
                   'has-success': $ctrl.consultation.email.$valid}">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
       <label for="email">Email</label>
       <input name="email" id="email" class="form-control" ng-model="$ctrl.customer.email" ng-minlength="10" ng-maxlength="40" required>
       <div class="error" ng-show="$ctrl.consultation.email.$dirty && $ctrl.consultation.email.$invalid">
@@ -72,11 +75,13 @@
               Email cannot be more that 40 characters
           </small>
       </div>
+    </div>
   </div>
 
   <!--      Customer City       -->
-  <div  ng-class="{'has-error' : $ctrl.consultation.city.$dirty && $ctrl.consultation.city.$invalid,
+  <div class="row" ng-class="{'has-error' : $ctrl.consultation.city.$dirty && $ctrl.consultation.city.$invalid,
                   'has-success': $ctrl.consultation.city.$valid}">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
       <label for="city">City</label>
       <input name="city" id="city" class="form-control" ng-model="$ctrl.customer.city" ng-minlength="3" ng-maxlength="20" required>
       <div class="error" ng-show="$ctrl.consultation.city.$dirty && $ctrl.consultation.city.$invalid">
@@ -90,11 +95,13 @@
               City cannot be more that 20 characters
           </small>
       </div>
+    </div>
   </div>
 
   <!--      Customer State       -->
-  <div  ng-class="{'has-error' : $ctrl.consultation.state.$dirty && $ctrl.consultation.state.$invalid,
+  <div class="row" ng-class="{'has-error' : $ctrl.consultation.state.$dirty && $ctrl.consultation.state.$invalid,
                   'has-success': $ctrl.consultation.state.$valid}">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
       <label for="state">State</label>
       <input name="state" id="state" class="form-control" ng-model="$ctrl.customer.state" ng-minlength="2" ng-maxlength="20" required>
       <div class="error" ng-show="$ctrl.consultation.state.$dirty && $ctrl.consultation.state.$invalid">
@@ -108,11 +115,13 @@
               State cannot be more that 20 characters
           </small>
       </div>
+    </div>
   </div>
 
   <!--      Customer Style       -->
-  <div  ng-class="{'has-error' : $ctrl.consultation.style.$dirty && $ctrl.consultation.style.$invalid,
+  <div class="row" ng-class="{'has-error' : $ctrl.consultation.style.$dirty && $ctrl.consultation.style.$invalid,
                   'has-success': $ctrl.consultation.style.$valid}">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
       <label for="style">Tell Us About Your Style</label>
       <textarea name="style" id="style" class="form-control" ng-model="$ctrl.customer.style" ng-minlength="5" ng-maxlength="300" required></textarea>
       <div class="error" ng-show="$ctrl.consultation.style.$dirty && $ctrl.consultation.style.$invalid">
@@ -126,11 +135,13 @@
               Style cannot be more that 300 characters
           </small>
       </div>
+    </div>
   </div>
 
   <!--      Customer URL       -->
-  <div  ng-class="{'has-error' : $ctrl.consultation.url.$dirty && $ctrl.consultation.url.$invalid,
+  <div class="row" ng-class="{'has-error' : $ctrl.consultation.url.$dirty && $ctrl.consultation.url.$invalid,
                   'has-success': $ctrl.consultation.url.$valid}">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
       <label for="url">Add a Link to Your Pinterest Board</label>
       <input name="url" id="url" class="form-control" ng-model="$ctrl.customer.url" ng-minlength="10" ng-maxlength="100" required>
       <div class="error" ng-show="$ctrl.consultation.url.$dirty && $ctrl.consultation.url.$invalid">
@@ -144,11 +155,13 @@
               URL cannot be more that 100 characters
           </small>
       </div>
+    </div>
   </div>
 
   <!--      Customer Space       -->
-  <div  ng-class="{'has-error' : $ctrl.consultation.space.$dirty && $ctrl.consultation.space.$invalid,
+  <div class="row" ng-class="{'has-error' : $ctrl.consultation.space.$dirty && $ctrl.consultation.space.$invalid,
                   'has-success': $ctrl.consultation.space.$valid}">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
       <label for="space">Tell Us About Your Space</label>
       <textarea name="space" id="space" class="form-control" ng-model="$ctrl.customer.space" ng-minlength="10" ng-maxlength="300" placeholder="Include colors, dimensions, or other helpful details" required></textarea>
       <div class="error" ng-show="$ctrl.consultation.space.$dirty && $ctrl.consultation.space.$invalid">
@@ -162,18 +175,22 @@
               Space cannot be more that 300 characters
           </small>
       </div>
+    </div>
   </div>
 
   <!--      Customer Images       -->
-  <div  ng-class="{'has-error' : $ctrl.consultation.images.$dirty && $ctrl.consultation.images.$invalid,
+  <div class="row" ng-class="{'has-error' : $ctrl.consultation.images.$dirty && $ctrl.consultation.images.$invalid,
                   'has-success': $ctrl.consultation.images.$valid}">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
       <label for="images">Upload Images</label>
-      <input name="images" id="images" class="form-control" ng-model="$ctrl.customer.images">
+      <input name="images" id="images" class="form-control" ng-model="$ctrl.customer.images" placeholder="Optional">
+    </div>
   </div>
 
   <!--      Customer Budget       -->
-  <div  ng-class="{'has-error' : $ctrl.consultation.budget.$dirty && $ctrl.consultation.budget.$invalid,
+  <div class="row" ng-class="{'has-error' : $ctrl.consultation.budget.$dirty && $ctrl.consultation.budget.$invalid,
                   'has-success': $ctrl.consultation.budget.$valid}">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
       <label for="budget">Budget</label>
       <input name="budget" id="budget" class="form-control" ng-model="$ctrl.customer.budget" placeholder="$200.00" required>
       <div class="error" ng-show="$ctrl.consultation.budget.$dirty && $ctrl.consultation.budget.$invalid">
@@ -181,21 +198,26 @@
               Budget is a required field
           </small>
       </div>
+    </div>
   </div>
 
-  <!--      Customer Deadline       -->
-  <div  ng-class="{'has-error' : $ctrl.consultation.timeline.$dirty && $ctrl.consultation.timeline.$invalid,
+  <!--      Customer Timeline       -->
+  <div class="row" ng-class="{'has-error' : $ctrl.consultation.timeline.$dirty && $ctrl.consultation.timeline.$invalid,
                   'has-success': $ctrl.consultation.timeline.$valid}">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
       <label for="timeline">Timeline</label>
-      <input name="timeline" id="timeline" class="form-control" ng-model="$ctrl.customer.timeline" placeholder="March 1st, 2017">
+      <input name="timeline" id="timeline" class="form-control" ng-model="$ctrl.customer.timeline" placeholder="Optional">
+    </div>
   </div>
 
 
   <!---------   SUBMIT BUTTON    --------->
-  <div class="form-group">
+  <div class=" row form-group">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
       <button ng-disabled="$ctrl.consultation.$invalid" type="submit" class="btn btn-primary">
         Submit
       </button>
+    </div>
   </div>
 </form>
 
