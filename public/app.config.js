@@ -19,6 +19,12 @@
         name: 'home',
         url: '/Home',
         component: 'home'
+      })
+    $stateProvider
+      .state({
+        name: 'howItWorks',
+        url: '/How-It-Works',
+        component: 'howItWorks'
       });
 
   }
