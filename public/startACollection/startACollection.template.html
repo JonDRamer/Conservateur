@@ -96,13 +96,13 @@
   <div  ng-class="{'has-error' : $ctrl.consultation.state.$dirty && $ctrl.consultation.state.$invalid,
                   'has-success': $ctrl.consultation.state.$valid}">
       <label for="state">State</label>
-      <input name="state" id="state" class="form-control" ng-model="$ctrl.customer.state" ng-minlength="3" ng-maxlength="20" required>
+      <input name="state" id="state" class="form-control" ng-model="$ctrl.customer.state" ng-minlength="2" ng-maxlength="20" required>
       <div class="error" ng-show="$ctrl.consultation.state.$dirty && $ctrl.consultation.state.$invalid">
           <small class="error" ng-show="$ctrl.consultation.state.$error.required">
               State is a required field
           </small>
           <small class="error" ng-show="$ctrl.consultation.state.$error.minlength">
-              State must be at least 3 characters
+              State must be at least 2 characters
           </small>
           <small class="error" ng-show="$ctrl.consultation.state.$error.maxlength">
               State cannot be more that 20 characters
@@ -168,12 +168,7 @@
   <div  ng-class="{'has-error' : $ctrl.consultation.images.$dirty && $ctrl.consultation.images.$invalid,
                   'has-success': $ctrl.consultation.images.$valid}">
       <label for="images">Upload Images</label>
-      <input name="images" id="images" class="form-control" ng-model="$ctrl.customer.images" required>
-      <div class="error" ng-show="$ctrl.consultation.images.$dirty && $ctrl.consultation.images.$invalid">
-          <small class="error" ng-show="$ctrl.consultation.images.$error.required">
-              Image is a required field
-          </small>
-      </div>
+      <input name="images" id="images" class="form-control" ng-model="$ctrl.customer.images">
   </div>
 
   <!--      Customer Budget       -->
@@ -186,6 +181,13 @@
               Budget is a required field
           </small>
       </div>
+  </div>
+
+  <!--      Customer Deadline       -->
+  <div  ng-class="{'has-error' : $ctrl.consultation.timeline.$dirty && $ctrl.consultation.timeline.$invalid,
+                  'has-success': $ctrl.consultation.timeline.$valid}">
+      <label for="timeline">Timeline</label>
+      <input name="timeline" id="timeline" class="form-control" ng-model="$ctrl.customer.timeline" placeholder="March 1st, 2017">
   </div>
 
 
