@@ -89,6 +89,13 @@ h1 {
   background-position: center;
 }
 
+.paypal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+}
+
 footer {
   margin-top: 5vh;
   margin-bottom: 5vh;
