@@ -71,8 +71,8 @@ h1 {
 }
 
 .howItWorks {
-  height: 50vh;
-  border: 1px solid red;
+  height: 10vh;
+  padding-bottom: 15vh;
 }
 
 .faq {
@@ -92,4 +92,9 @@ footer {
   border-top: 2px solid black;
   height: 10vh;
   text-align: center;
+}
+
+
+}
+
 }
