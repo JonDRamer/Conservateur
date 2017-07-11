@@ -110,53 +110,42 @@
       </div>
   </div>
 
-  <!--      Post Description       -->
-  <div ng-class="{'has-error' : $ctrl.newPost.body.$dirty && $ctrl.newPost.body.$invalid,
-                  'has-success': $ctrl.newPost.body.$valid}">
-      <label for="body">Body</label>
-      <textarea name="body" id="body" class="form-control" ng-model="$ctrl.post.body" ng-minlength="3" required></textarea>
-      <div class="error" ng-show="$ctrl.newPost.body.$dirty && $ctrl.newPost.body.$invalid">
-          <small class="error" ng-show="$ctrl.newPost.body.$error.required">
-              Post body is required
+  <!--      Customer Style       -->
+  <div  ng-class="{'has-error' : $ctrl.consultation.style.$dirty && $ctrl.consultation.style.$invalid,
+                  'has-success': $ctrl.consultation.style.$valid}">
+      <label for="style">Tell Us About Your Style</label>
+      <textarea name="style" id="style" class="form-control" ng-model="$ctrl.customer.style" ng-minlength="5" ng-maxlength="300" required></textarea>
+      <div class="error" ng-show="$ctrl.consultation.style.$dirty && $ctrl.consultation.style.$invalid">
+          <small class="error" ng-show="$ctrl.consultation.style.$error.required">
+              Style is a required field
           </small>
-          <small class="error" ng-show="$ctrl.newPost.body.$error.minlength">
-              Post body is required to be at least 3 characters
+          <small class="error" ng-show="$ctrl.consultation.style.$error.minlength">
+              Style must be at least 5 characters
           </small>
-      </div>
-  </div>
-
-  <!--      Post Author       -->
-  <div ng-class="{'has-error' : $ctrl.newPost.author.$dirty && $ctrl.newPost.author.$invalid,
-                  'has-success': $ctrl.newPost.author.$valid}">
-      <label for="author">Author</label>
-      <input name="author" id="author" class="form-control" ng-model="$ctrl.post.author" ng-minlength="3" ng-maxlength="20" required>
-      <div class="error" ng-show="$ctrl.newPost.author.$dirty && $ctrl.newPost.author.$invalid">
-          <small class="error" ng-show="$ctrl.newPost.author.$error.required">
-              Author name is required.
-          </small>
-          <small class="error" ng-show="$ctrl.newPost.author.$error.minlength">
-              Author name is required to be at least 3 characters
-          </small>
-          <small class="error" ng-show="$ctrl.newPost.author.$error.maxlength">
-              Author name cannot be longer than 20 characters
+          <small class="error" ng-show="$ctrl.consultation.style.$error.maxlength">
+              Style cannot be more that 300 characters
           </small>
       </div>
   </div>
 
-  <!--      Post ImageUrl       -->
-  <div ng-class="{'has-error' : $ctrl.newPost.image_url.$dirty && $ctrl.newPost.image_url.$invalid,
-                  'has-success': $ctrl.newPost.image_url.$valid}">
-      <label for="image-url">Image URL</label>
-      <input name="image_url" id="image-url" class="form-control" ng-model="$ctrl.post.image_url" ng-minlength="3" required>
-      <div class="error" ng-show="$ctrl.newPost.image_url.$dirty && $ctrl.newPost.image_url.$invalid">
-          <small class="error" ng-show="$ctrl.newPost.image_url.$error.required">
-              Image URL is required.
+  <!--      Customer Inspiration Link       -->
+  <div  ng-class="{'has-error' : $ctrl.consultation.url.$dirty && $ctrl.consultation.url.$invalid,
+                  'has-success': $ctrl.consultation.url.$valid}">
+      <label for="url">Add a Link to Your Pinterest Board</label>
+      <input name="url" id="url" class="form-control" ng-model="$ctrl.customer.url" ng-minlength="10" ng-maxlength="100" required>
+      <div class="error" ng-show="$ctrl.consultation.url.$dirty && $ctrl.consultation.url.$invalid">
+          <small class="error" ng-show="$ctrl.consultation.url.$error.required">
+              URL is a required field
           </small>
-          <small class="error" ng-show="$ctrl.newPost.image_url.$error.minlength">
-              Image URL is required to be at least 3 characters
+          <small class="error" ng-show="$ctrl.consultation.url.$error.minlength">
+              URL must be at least 10 characters
+          </small>
+          <small class="error" ng-show="$ctrl.consultation.url.$error.maxlength">
+              URL cannot be more that 100 characters
           </small>
       </div>
   </div>
+
 
   <!---------   SUBMIT BUTTON    --------->
   <div class="form-group">
