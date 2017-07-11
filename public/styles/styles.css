@@ -68,24 +68,6 @@ h1 {
   border: 1px solid red;
 }
 
-.spotlight {
-  /*width: 66%;*/
-  height: 50vh;
-  background-image: url("../assets/spotlight.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.artist {
-  /*width: 33%;*/
-  height: 50vh;
-  background-image: url("../assets/artist.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 .paypal {
   display: flex;
   justify-content: center;
