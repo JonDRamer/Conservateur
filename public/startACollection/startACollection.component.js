@@ -30,6 +30,8 @@
       console.log("VM.Order: ", vm.order);
       localStorage.order = JSON.stringify(vm.order);
       console.log("Local Storage Order: ", JSON.parse(localStorage.order));
+      delete vm.customer;
+      vm.consultation.$setPristine();
     }
   }
 
