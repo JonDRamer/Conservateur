@@ -63,12 +63,9 @@ h1 {
   padding-top: 5vh;
 }
 
-.featuredArtist {
-  /*display: flex;
-  justify-content: center;
-  flex-flow: row wrap;*/
-  width: 100vw;
+.howItWorks {
   height: 50vh;
+  border: 1px solid red;
 }
 
 .spotlight {
