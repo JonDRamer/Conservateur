@@ -7,9 +7,9 @@
       templateUrl: './startACollection/startACollection.template.html'
     });
 
-  controller.$inject = ['$state'];
+  controller.$inject = ['$state', '$http'];
 
-  function controller($state) {
+  function controller($state, $http) {
     const vm = this;
 
     vm.onInit = () => {}
@@ -23,13 +23,13 @@
         style: vm.consultation.style.$viewValue,
         url: vm.consultation.url.$viewValue,
         space: vm.consultation.space.$viewValue,
-        images: vm.consultation.images.$viewValue,
         budget: vm.consultation.budget.$viewValue,
         timeline: vm.consultation.timeline.$viewValue
       }
-      console.log("VM.Order: ", vm.order);
       localStorage.order = JSON.stringify(vm.order);
-      console.log("Local Storage Order: ", JSON.parse(localStorage.order));
+      vm.orderDetail = JSON.parse(localStorage.order);
+      console.log("Local Storage Order: ", vm.orderDetail);
+      $http.post("/collectors", vm.orderDetail);
       delete vm.customer;
       vm.consultation.$setPristine();
     }
