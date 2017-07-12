@@ -12,7 +12,9 @@
   function controller($state) {
     const vm = this;
 
-    vm.onInit = () => {}
+    vm.onInit = () => {
+      vm.form = false;
+    }
   }
 
 }());
