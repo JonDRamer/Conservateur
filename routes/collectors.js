@@ -2,65 +2,39 @@
 
 const express = require('express');
 const router = express.Router();
-const knex = require('../db/knex');
+const nodemailer = require('nodemailer');
 
 router.route('/')
-  .get((req, res, next) => {
-    knex('collectors')
-      .then(collectors => res.json(collectors))
-      .catch(err => next(err));
-  })
   .post((req, res, next) => {
-    knex('users')
-      .insert({
-        email: req.body.email,
-        password_digest: req.body.password_digest,
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        artist: req.body.artist,
-        collector: req.body.collector,
-        curator: req.body.curator
-      })
-      .returning('*')
-      .then((users) => {
-        knex('collectors')
-          .insert({
-            bio: req.body.bio,
-            user_id: users[0].id
-          })
-          .returning('*', users)
-          .then(collectors => res.json(`${users[0].first_name}'s Bio: ${collectors[0].bio} was successfully added to the collectors table.`))
-      })
-      .catch(err => next(err));
-  })
-router.route('/:collector_id')
-  .get((req, res, next) => {
-    knex('collectors')
-      .where('id', req.params.collector_id)
-      .first()
-      .then(collector => res.json(collector))
-      .catch(err => next(err));
-  })
-  .patch((req, res, next) => {
-    knex('collectors')
-      .update(req.body)
-      .where('id', req.params.collector_id)
-      .returning('*')
-      .then(collectors => res.json(collectors[0]))
-      .catch(err => next(err));
-  })
-  .delete((req, res, next) => {
-    knex('collectors')
-      .del()
-      .where('id', req.params.collector_id)
-      .returning('*')
-      .then((collectors) => {
-        knex('users')
-          .where('id', collectors[0].user_id)
-          .first()
-          .then(user => res.json(`${user.first_name} ${user.last_name}'s bio was successfully deleted.`));
-      })
-      .catch(err => next(err));
+    // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true, // secure:true for port 465, secure:false for port 587
+      auth: {
+        user: 'jramer87@gmail.com',
+        pass: 'JrAmEr04301987,01041988,02232013'
+      }
+    });
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+      from: '"Jon Ramer" <jramer87@gmail.com>', // sender address
+      to: 'jonramer@yahoo.com', // list of receivers
+      subject: 'Conservator Consultation Confirmation', // Subject line
+      text: 'Congratulations on starting your Conservator journey!  Your curator will be in touch shortly to chat.', // plain text body
+      html: '<b>Congratulations on starting your Conservator journey!  Your curator will be in touch shortly to chat.</b>' // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log('Message %s sent: %s', info.messageId, info.response);
+      res.send(info.response);
+    });
   });
+
 
 module.exports = router;
