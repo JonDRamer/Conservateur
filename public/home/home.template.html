@@ -61,15 +61,15 @@
     <!-- NEED CONTENT -->
   </div>
   <div class="row cta">
-    <a ui-sref="howItWorks"><button type="button" class="btn btn-default col-xs-8 col-xs-offset-2">Start a Collection</button></a>
+    <a ui-sref="startACollection"><button type="button" class="btn btn-default col-xs-8 col-xs-offset-2">Start a Collection</button></a>
   </div>
   <div class="row cta">
-    <button ng-click="$ctrl.form=!$ctrl.form" type="button" class="btn btn-default col-xs-8 col-xs-offset-2">Subscribe</button>
+    <button ng-click="$ctrl.form=!$ctrl.form" type="button" class="btn btn-default col-xs-8 col-xs-offset-2">Subscribe to Our Email List</button>
   </div>
 </div>
 
 <!-- Begin MailChimp Signup Form -->
-<div id="mc_embed_signup">
+<div class="subscribeForm" id="mc_embed_signup">
   <form ng-show="$ctrl.form" action="//katiramer.us8.list-manage.com/subscribe/post?u=18819f7d8a474829ca6fe16bf&amp;id=551c4b0e5c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
       <div id="mc_embed_signup_scroll">
   	<h2>Subscribe to receive artist updates each month</h2>
