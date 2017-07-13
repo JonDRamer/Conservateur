@@ -31,6 +31,12 @@
         name: 'startACollection',
         url: '/Start-A-Collection',
         component: 'startACollection'
+      })
+    $stateProvider
+      .state({
+        name: 'confirmation',
+        url: '/Confirmation',
+        component: 'confirmation'
       });
 
   }
