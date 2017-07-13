@@ -46,15 +46,23 @@
 <section class="container">
   <div class="row summary">
     <h1 col-xs-12>Order Confirmation:</h1>
-    <h3 col-xs-12>Name: {{localStorage.order.name}}</h3>
-    <h3 col-xs-12>Email: {{localStorage.order.email}}</h3>
-    <h3 col-xs-12>City: {{localStorage.order.city}}</h3>
-    <h3 col-xs-12>State: {{localStorage.order.state}}</h3>
-    <h3 col-xs-12>Style: {{localStorage.order.style}}</h3>
-    <h3 col-xs-12>Space: {{localStorage.order.space}}</h3>
-    <h3 col-xs-12>Budget: {{localStorage.order.budget}}</h3>
-    <h3 col-xs-12>Timeline: {{localStorage.order.timeline}}</h3>
+    <h3 col-xs-12>Name: {{$ctrl.order.name}}</h3>
+    <h3 col-xs-12>Email: {{$ctrl.order.email}}</h3>
+    <h3 col-xs-12>City: {{$ctrl.order.city}}</h3>
+    <h3 col-xs-12>State: {{$ctrl.order.state}}</h3>
+    <h3 col-xs-12>Style: {{$ctrl.order.style}}</h3>
+    <h3 col-xs-12>Space: {{$ctrl.order.space}}</h3>
+    <h3 col-xs-12>Budget: {{$ctrl.order.budget}}</h3>
+    <h3 col-xs-12>Timeline: {{$ctrl.order.timeline}}</h3>
     <h3 col-xs-12>Order Total: $19.99</h3>
+    <!---------   Confirmation Email BUTTON    --------->
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <button ng-disabled="$ctrl.consultation.$invalid" ng-click="$ctrl.sendConfirmationEmail()" type="submit" class="btn btn-primary submit">
+          Send Email Confirmation
+        </button>
+      </div>
+    </div>
   </div>
 </section>
 

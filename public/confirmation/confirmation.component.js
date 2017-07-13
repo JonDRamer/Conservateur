@@ -13,13 +13,12 @@
     const vm = this;
 
     vm.$onInit = () => {
-      vm.form = true;
-      vm.confirmation = false;
-      vm.checkout = false;
+      vm.order = JSON.parse(localStorage.order);
     }
 
-    vm.proceedToCheckout = (consultation) => {
-      $http.post("/collectors", JSON.parse(localStorage.order));
+    vm.sendConfirmationEmail = () => {
+      console.log(vm.order);
+      $http.post("/collectors", vm.order);
     } //end of submitOrder function
 
   } //end of controller function
