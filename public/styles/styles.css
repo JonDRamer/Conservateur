@@ -93,6 +93,18 @@ h1 {
   text-align: center;
 }
 
+.consultationForm {
+  margin-top: 5vh;
+}
+
+.submit {
+  margin-top: 2vh;
+}
+
+.summary {
+  text-align: center;
+}
+
 .paypal {
   display: flex;
   justify-content: center;

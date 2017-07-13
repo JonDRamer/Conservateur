@@ -15,9 +15,10 @@
     vm.$onInit = () => {
       vm.form = true;
       vm.confirmation = false;
+      vm.checkout = false;
     }
 
-    vm.submitOrder = (consultation) => {
+    vm.proceedToCheckout = (consultation) => {
 
       vm.order = {
         name: vm.consultation.name.$viewValue,
@@ -30,12 +31,14 @@
         budget: vm.consultation.budget.$viewValue,
         timeline: vm.consultation.timeline.$viewValue
       }
-
-      $http.post("/collectors", vm.order);
+      localStorage.order = JSON.stringify(vm.order);
+      console.log(JSON.parse(localStorage.order));
+      // $http.post("/collectors", vm.order);
       delete vm.customer;
       vm.consultation.$setPristine();
       vm.form = false;
-      vm.confirmation = true;
+      vm.checkout = true;
+      // vm.confirmation = true;
     } //end of submitOrder function
 
   } //end of controller function

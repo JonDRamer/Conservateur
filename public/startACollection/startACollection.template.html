@@ -44,7 +44,7 @@
 </section>
 
 <!-- CONSULTATION FORM -->
-<form class="container" name="$ctrl.consultation" ng-show="$ctrl.form" novalidate>
+<form class="container consultationForm" name="$ctrl.consultation" ng-show="$ctrl.form" novalidate>
 
   <!--      Customer Name       -->
   <div class="row" ng-class="{'has-error' : $ctrl.consultation.name.$dirty && $ctrl.consultation.name.$invalid,
@@ -213,23 +213,40 @@
   <!---------   SUBMIT BUTTON    --------->
   <div class=" row form-group">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <button ng-disabled="$ctrl.consultation.$invalid" ng-click="$ctrl.submitOrder(consultation)" type="submit" class="btn btn-primary">
-        Submit
+      <button ng-disabled="$ctrl.consultation.$invalid" ng-click="$ctrl.proceedToCheckout(consultation)" type="submit" class="btn btn-primary submit">
+        Proceed to Checkout
       </button>
     </div>
   </div>
 </form>
 
-
-<!-- PAYPAL BUTTON -->
-  <!-- <section class="paypal">
+<section class="container" ng-show="$ctrl.checkout">
+  <div class="row summary">
+    <h1 col-xs-12>Order Summary:</h1>
+    <h3 col-xs-12>Name: {{$ctrl.order.name}}</h3>
+    <h3 col-xs-12>Email: {{$ctrl.order.email}}</h3>
+    <h3 col-xs-12>City: {{$ctrl.order.city}}</h3>
+    <h3 col-xs-12>State: {{$ctrl.order.state}}</h3>
+    <h3 col-xs-12>Style: {{$ctrl.order.style}}</h3>
+    <h3 col-xs-12>Space: {{$ctrl.order.space}}</h3>
+    <h3 col-xs-12>Budget: {{$ctrl.order.budget}}</h3>
+    <h3 col-xs-12>Timeline: {{$ctrl.order.timeline}}</h3>
+    <h3 col-xs-12>Order Total: $19.99</h3>
+    <!-- PAYPAL BUTTON -->
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
       <input type="hidden" name="cmd" value="_s-xclick">
-      <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
-      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+      <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
       <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-      </form>
-  </section> -->
+    </form>
+
+
+      </section>
+  </div>
+</section>
+
+
+
 
 
 <!-- FOOTER -->
