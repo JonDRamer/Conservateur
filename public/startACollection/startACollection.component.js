@@ -33,7 +33,7 @@
       }
       localStorage.order = JSON.stringify(vm.order);
       console.log(JSON.parse(localStorage.order));
-      // $http.post("/collectors", vm.order);
+      $http.post("/collectors", vm.order);
       delete vm.customer;
       vm.consultation.$setPristine();
       vm.form = false;
