@@ -35,8 +35,16 @@
   <!-- HERO IMAGE LIVES HERE -->
 </section>
 
+<section class="container" ng-show="$ctrl.confirmation">
+  <div class="row confirmation">
+    <h1 col-xs-12>Your order has been processed!</h1>
+    <h3 col-xs-12>You should receive a confirmation email momentarily.</h3>
+    <h3 col-xs-12>Your Curator will be in touch shortly to discuss your piece in more detail.</h3>
+  </div>
+</section>
+
 <!-- CONSULTATION FORM -->
-<form class="container" name="$ctrl.consultation" novalidate>
+<form class="container" name="$ctrl.consultation" ng-show="$ctrl.form" novalidate>
 
   <!--      Customer Name       -->
   <div class="row" ng-class="{'has-error' : $ctrl.consultation.name.$dirty && $ctrl.consultation.name.$invalid,

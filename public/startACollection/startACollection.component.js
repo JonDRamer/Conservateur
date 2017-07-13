@@ -12,9 +12,13 @@
   function controller($state, $http) {
     const vm = this;
 
-    vm.onInit = () => {}
+    vm.$onInit = () => {
+      vm.form = true;
+      vm.confirmation = false;
+    }
 
     vm.submitOrder = (consultation) => {
+
       vm.order = {
         name: vm.consultation.name.$viewValue,
         email: vm.consultation.email.$viewValue,
@@ -26,13 +30,13 @@
         budget: vm.consultation.budget.$viewValue,
         timeline: vm.consultation.timeline.$viewValue
       }
-      localStorage.order = JSON.stringify(vm.order);
-      vm.orderDetail = JSON.parse(localStorage.order);
-      console.log("Local Storage Order: ", vm.orderDetail);
-      $http.post("/collectors", vm.orderDetail);
+
+      $http.post("/collectors", vm.order);
       delete vm.customer;
       vm.consultation.$setPristine();
-    }
-  }
+      vm.form = false;
+      vm.confirmation = true;
+    } //end of submitOrder function
 
+  } //end of controller function
 }());
