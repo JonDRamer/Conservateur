@@ -7,7 +7,8 @@ exports.up = (knex, Promise) => {
     table.text('description');
     table.text('size');
     table.decimal('price');
-    table.string('imageURL')
+    table.string('img_url');
+    table.text('tags')
       .notNullable();
     table.integer('artist_id')
       .notNullable()
