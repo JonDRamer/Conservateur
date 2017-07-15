@@ -239,22 +239,75 @@
       <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
       <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
     </form>
-
-
-
-      </section>
   </div>
 </section>
 
 
+<!-- Login modal -->
+<div class="modal fade bs-example-modal-sm container" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <!-- Login FORM -->
+      <form class="row" name="$ctrl.user" novalidate>
 
+        <!--      User Email       -->
+        <div class="row" ng-class="{'has-error' : $ctrl.user.email.$dirty && $ctrl.user.email.$invalid,
+                        'has-success': $ctrl.user.email.$valid}">
+          <div class="col-xs-10 col-xs-offset-1">
+            <label for="email">Email</label>
+            <input name="email" id="email" class="form-control" ng-model="$ctrl.login.email" ng-minlength="3" ng-maxlength="20" required>
+            <div class="error" ng-show="$ctrl.user.email.$dirty && $ctrl.user.email.$invalid">
+                <small class="error" ng-show="$ctrl.user.email.$error.required">
+                    Email is a required field
+                </small>
+                <small class="error" ng-show="$ctrl.user.email.$error.minlength">
+                    Email must be at least 3 characters
+                </small>
+                <small class="error" ng-show="$ctrl.user.email.$error.maxlength">
+                    Email cannot be more that 20 characters
+                </small>
+            </div>
+          </div>
+        </div>
 
+        <!--      User Password       -->
+        <div class="row" ng-class="{'has-error' : $ctrl.user.password.$dirty && $ctrl.user.password.$invalid,
+                        'has-success': $ctrl.user.password.$valid}">
+          <div class="col-xs-10 col-xs-offset-1">
+            <label for="password">Password</label>
+            <input name="password" id="password" class="form-control" ng-model="$ctrl.login.password" ng-minlength="10" ng-maxlength="40" required>
+            <div class="error" ng-show="$ctrl.user.password.$dirty && $ctrl.user.password.$invalid">
+                <small class="error" ng-show="$ctrl.user.password.$error.required">
+                    Password is a required field
+                </small>
+                <small class="error" ng-show="$ctrl.user.password.$error.minlength">
+                    Password must be at least 10 characters
+                </small>
+                <small class="error" ng-show="$ctrl.user.password.$error.maxlength">
+                    Password cannot be more that 40 characters
+                </small>
+            </div>
+          </div>
+        </div>
+
+        <!---------   SUBMIT BUTTON    --------->
+        <div class="row form-group">
+          <div class="col-xs-10 col-xs-offset-1">
+            <button ng-disabled="$ctrl.user.$invalid" ng-click="" type="submit" class="btn btn-primary submit">
+              Login
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <div class="container">
   <footer class="row">
     <h3 class="col-xs-12 col-sm-6 col-lg-2 col-lg-offset-1">CONTACT/SUPPORT</h3>
-    <h3 class="col-xs-12 col-sm-6 col-lg-2">LOGIN</h3>
+    <h3 class="col-xs-12 col-sm-6 col-lg-2" data-toggle="modal" data-target=".bs-example-modal-sm">LOGIN</h3>
     <h3 class="col-xs-12 col-sm-6 col-lg-2">FAQ</h3>
     <h3 class="col-xs-12 col-sm-6 col-lg-2">PRESS</h3>
     <h3 class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-2 col-lg-offset-0">ARTIST INQUIRIES</h3>
