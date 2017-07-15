@@ -13,6 +13,10 @@
     const vm = this;
 
     vm.$onInit = () => {
+      vm.getArtists();
+    }
+
+    vm.getArtists = () => {
       $http.get('/artists')
         .then((res) => {
           vm.artists = res.data;

@@ -21,14 +21,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a ui-sref="">Artists</a></li>
+        <li ng-click="$ctrl.getArtists()"><a ui-sref="">Artists</a></li>
         <li><a ui-sref="">Paintings</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
-<input type="search" class="form-control input-sm search-form" ng-model="searchText" placeholder="Search">
+<section class="container">
+  <div class="row">
+    <input type="search" class="form-control input-lg search-form" ng-model="searchText" placeholder="Search artists">
+  </div>
+</section>
 
 <section ng-repeat="artist in $ctrl.artists | filter:searchText" class="container artistProfile">
   <div class="row">
