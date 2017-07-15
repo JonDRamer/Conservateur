@@ -45,25 +45,35 @@ router.route('/register')
   });
 
 router.route('/login')
-  .get((req, res, next) => {
-    res.render('auth/login')
-  })
   .post((req, res, next) => {
+    console.log("Request Body: ", req.body);
     knex('users')
       .where('email', req.body.email)
       .first()
       .then((user) => {
-        if (user) {
-          let matches = bcrypt.compareSync(req.body.password_digest, user.password_digest);
-          if (matches) {
-            req.session.userId = user.id;
-            res.send(req.session);
-            // res.render('statics/home', {
-            //   loggedIn: true
-            // });
+        console.log("User: ", user);
+        if (user.curator === true) {
+          if (user) {
+            let matches = bcrypt.compareSync(req.body.password_digest, user.password_digest);
+            if (matches) {
+              req.session.userId = user.id;
+              res.send(req.session);
+            }
+          } else {
+            res.send('invalid password');
+          }
+        } else if (user.artist === true) {
+          if (user) {
+            let matches = bcrypt.compareSync(req.body.password_digest, user.password_digest);
+            if (matches) {
+              req.session.userId = user.id;
+              res.send(req.session);
+            } else {
+              res.send('invalid password');
+            }
           }
         } else {
-          res.redirect('/register');
+          res.send("invalid");
         }
       })
       .catch(err => {
@@ -76,7 +86,7 @@ router.route('/logout')
   .get((req, res, next) => {
     req.session = null;
     res.json(req.session);
-    // res.redirect('/');
+    res.redirect('/');
   });
 
 

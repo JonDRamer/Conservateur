@@ -15,9 +15,9 @@
     vm.$onInit = () => {}
 
     vm.signIn = () => {
-      $http.post("/auth/login")
+      $http.post("/auth/login", vm.login)
         .then((res) => {
-          console.log(res);
+          console.log(res.data);
           $state.go('curator');
         });
     }

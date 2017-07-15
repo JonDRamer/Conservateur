@@ -12,7 +12,13 @@
   function controller($state, $http) {
     const vm = this;
 
-    vm.$onInit = () => {}
+    vm.$onInit = () => {
+      $http.get('/artists')
+        .then((res) => {
+          vm.artists = res.data;
+          console.log(vm.artists);
+        })
+    }
 
   }
 

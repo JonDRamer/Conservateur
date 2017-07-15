@@ -28,14 +28,37 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<h1>CURATOR VIEW</h1>
+<input type="search" class="form-control input-sm search-form" ng-model="searchText" placeholder="Search">
+
+<section ng-repeat="artist in $ctrl.artists | filter:searchText" class="container artistProfile">
+  <div class="row">
+    <img src="{{artist.headshot}}" alt="" class="img-responsive center-block headshot">
+    <h1 class="col-xs-12">{{artist.name}}</h1>
+    <h2 class="col-xs-12">Bio:</h2>
+    <h3 class="col-xs-12">{{artist.bio}}</h3>
+    <h2 class="col-xs-12">Tags:</h2>
+    <h3 class="col-xs-12">{{artist.tags}}</h3>
+    <div class="col-xs-12 col-sm-6 col-lg-3 artistSampleImage">
+      <img src="{{artist.img_url1}}" alt="" class="center-block" width="300">
+    </div>
+    <div class="col-xs-12 col-sm-6 col-lg-3 artistSampleImage">
+      <img src="{{artist.img_url2}}" alt="" class="center-block" width="300">
+    </div>
+    <div class="col-xs-12 col-sm-6 col-lg-3 artistSampleImage">
+      <img src="{{artist.img_url3}}" alt="" class="center-block" width="300">
+    </div>
+    <div class="col-xs-12 col-sm-6 col-lg-3 artistSampleImage">
+      <img src="{{artist.img_url4}}" alt="" class="center-block" width="300">
+    </div>
+  </div>
+</section>
 
 
 <!-- FOOTER -->
 <div class="container">
   <footer class="row">
     <h3 class="col-xs-12 col-sm-6 col-lg-2 col-lg-offset-1">CONTACT/SUPPORT</h3>
-    <h3 class="col-xs-12 col-sm-6 col-lg-2" data-toggle="modal" data-target=".bs-example-modal-sm">LOGIN</h3>
+    <h3 class="col-xs-12 col-sm-6 col-lg-2">LOGIN</h3>
     <h3 class="col-xs-12 col-sm-6 col-lg-2">FAQ</h3>
     <h3 class="col-xs-12 col-sm-6 col-lg-2">PRESS</h3>
     <h3 class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-2 col-lg-offset-0">ARTIST INQUIRIES</h3>

@@ -119,3 +119,22 @@ footer {
   height: 10vh;
   text-align: center;
 }
+
+
+/*  CURATOR VIEW  */
+
+.artistProfile {
+  background-color: #D2B48C;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.headshot {
+  height: 300px;
+  margin-top: 5vh;
+}
+
+.artistSampleImage {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}

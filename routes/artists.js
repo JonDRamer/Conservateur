@@ -7,7 +7,7 @@ const knex = require('../db/knex');
 router.route('/')
   .get((req, res, next) => {
     knex('artists')
-      .then(artists => res.json(artists))
+      .then((artists) => res.json(artists))
       .catch(err => next(err));
   })
   .post((req, res, next) => {

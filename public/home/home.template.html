@@ -130,7 +130,7 @@
                         'has-success': $ctrl.user.password.$valid}">
           <div class="col-xs-10 col-xs-offset-1">
             <label for="password">Password</label>
-            <input name="password" id="password" class="form-control" ng-model="$ctrl.login.password" ng-minlength="3" ng-maxlength="40" required>
+            <input name="password" id="password" class="form-control" ng-model="$ctrl.login.password_digest" ng-minlength="3" ng-maxlength="40" required>
             <div class="error" ng-show="$ctrl.user.password.$dirty && $ctrl.user.password.$invalid">
                 <small class="error" ng-show="$ctrl.user.password.$error.required">
                     Password is a required field

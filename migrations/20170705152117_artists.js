@@ -3,8 +3,13 @@
 exports.up = (knex, Promise) => {
   return knex.schema.createTable('artists', table => {
     table.increments();
-    table.text('bio');
+    table.string('name')
+      .notNullable();
+    table.text('bio')
+      .notNullable();
     table.text('tags')
+      .notNullable();
+    table.string('headshot')
       .notNullable();
     table.string('img_url1')
       .notNullable();
