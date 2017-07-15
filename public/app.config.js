@@ -37,6 +37,12 @@
         name: 'confirmation',
         url: '/Confirmation',
         component: 'confirmation'
+      })
+    $stateProvider
+      .state({
+        name: 'curator',
+        url: '/Curator',
+        component: 'curator'
       });
 
   }

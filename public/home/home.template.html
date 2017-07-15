@@ -130,13 +130,13 @@
                         'has-success': $ctrl.user.password.$valid}">
           <div class="col-xs-10 col-xs-offset-1">
             <label for="password">Password</label>
-            <input name="password" id="password" class="form-control" ng-model="$ctrl.login.password" ng-minlength="10" ng-maxlength="40" required>
+            <input name="password" id="password" class="form-control" ng-model="$ctrl.login.password" ng-minlength="3" ng-maxlength="40" required>
             <div class="error" ng-show="$ctrl.user.password.$dirty && $ctrl.user.password.$invalid">
                 <small class="error" ng-show="$ctrl.user.password.$error.required">
                     Password is a required field
                 </small>
                 <small class="error" ng-show="$ctrl.user.password.$error.minlength">
-                    Password must be at least 10 characters
+                    Password must be at least 3 characters
                 </small>
                 <small class="error" ng-show="$ctrl.user.password.$error.maxlength">
                     Password cannot be more that 40 characters
@@ -148,7 +148,7 @@
         <!---------   SUBMIT BUTTON    --------->
         <div class="row form-group">
           <div class="col-xs-10 col-xs-offset-1">
-            <button ng-disabled="$ctrl.user.$invalid" ng-click="" type="submit" class="btn btn-primary submit">
+            <button ng-disabled="$ctrl.user.$invalid" ng-click="$ctrl.signIn()" type="submit" class="btn btn-primary submit">
               Login
             </button>
           </div>

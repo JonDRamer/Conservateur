@@ -20,7 +20,6 @@ router.route('/register')
           first_name: req.body.first_name,
           last_name: req.body.last_name,
           artist: req.body.artist,
-          collector: req.body.collector,
           curator: req.body.curator
         })
         .returning('id')
@@ -31,7 +30,8 @@ router.route('/register')
         })
         .then((user) => {
           req.session.userId = user.id;
-          res.json(req.session);
+          res.status(200)
+            .json(req.session);
           // res.render('statics/home', {
           //   loggedIn: true
           // });
@@ -57,7 +57,7 @@ router.route('/login')
           let matches = bcrypt.compareSync(req.body.password_digest, user.password_digest);
           if (matches) {
             req.session.userId = user.id;
-            res.json(req.session);
+            res.send(req.session);
             // res.render('statics/home', {
             //   loggedIn: true
             // });

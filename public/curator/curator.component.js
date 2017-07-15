@@ -2,9 +2,9 @@
   "use strict";
 
   angular.module("app")
-    .component("home", {
+    .component("curator", {
       controller: controller,
-      templateUrl: './home/home.template.html'
+      templateUrl: './curator/curator.template.html'
     });
 
   controller.$inject = ['$state', '$http'];
@@ -13,14 +13,6 @@
     const vm = this;
 
     vm.$onInit = () => {}
-
-    vm.signIn = () => {
-      $http.post("/auth/login")
-        .then((res) => {
-          console.log(res);
-          $state.go('curator');
-        });
-    }
 
   }
 
