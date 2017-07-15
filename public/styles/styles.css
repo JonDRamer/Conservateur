@@ -60,7 +60,8 @@ h1 {
 }
 
 .cta {
-  padding-top: 5vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
 .startACollectionHero {
@@ -88,6 +89,7 @@ h1 {
 .subscribeForm {
   margin-top: 10vh;
 }
+
 .confirmation {
   text-align: center;
 }
@@ -112,8 +114,7 @@ h1 {
 }
 
 footer {
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  margin-top: 20vh;
   border-top: 2px solid black;
   height: 10vh;
   text-align: center;
