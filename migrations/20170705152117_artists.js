@@ -5,6 +5,8 @@ exports.up = (knex, Promise) => {
     table.increments();
     table.string('name')
       .notNullable();
+    table.string('store')
+      .notNullable();
     table.text('bio')
       .notNullable();
     table.text('tags')
