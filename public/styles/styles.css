@@ -58,6 +58,12 @@ h1 {
   background-color: #D2CDBE;
 }
 
+@media (max-width: 768px) {
+  .build {
+    border-right: none;
+  }
+}
+
 .curated {
   display: flex;
   align-items: center;
@@ -67,6 +73,12 @@ h1 {
   font-size: 30px;
   color: white;
   background-color: #D2CDBE;
+}
+
+@media (max-width: 768px) {
+  .curated {
+    border-left: none;
+  }
 }
 
 .learn {
