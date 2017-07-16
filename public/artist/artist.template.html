@@ -36,16 +36,14 @@
 
 <section ng-repeat="painting in $ctrl.paintings | filter:searchText | orderBy: title" class="container paintingProfile">
   <div class="row">
-    <img src="{{artist.headshot}}" alt="" class="img-responsive center-block headshot">
-    <h1 class="col-xs-12 col-md-10 col-md-offset-1">{{artist.name}}</h1>
-    <h2 class="col-xs-12 col-md-10 col-md-offset-1">Store: <a target="_blank" href="{{artist.store}}">{{artist.store}}</a></h2>
-    <h2 class="col-xs-12 col-md-10 col-md-offset-1">Bio:</h2>
-    <h3 class="col-xs-12 col-md-10 col-md-offset-1">{{artist.bio}}</h3>
-    <h2 class="col-xs-12 col-md-10 col-md-offset-1">Tags:</h2>
-    <h3 class="col-xs-12 col-md-10 col-md-offset-1">{{artist.tags}}</h3>
-    <h2 class="col-xs-12 col-md-10 col-md-offset-1">Samples:</h2>
-    <div class="col-xs-12 col-sm-6 col-lg-3 artistSampleImage">
-      <img src="{{artist.img_url1}}" alt="" class="center-block" width="300">
+    <h1 class="col-xs-12 col-md-10 col-md-offset-1">{{painting.title}}</h1>
+    <h2 class="col-xs-12 col-md-10 col-md-offset-1">Description:</h2>
+    <h3 class="col-xs-12 col-md-10 col-md-offset-1">{{painting.description}}</h3>
+    <h2 class="col-xs-12 col-md-10 col-md-offset-1">Price: ${{painting.price}}</h2>
+    <h2 class="col-xs-12 col-md-10 col-md-offset-1">Size: {{painting.size}}</h2>
+    <h2 class="col-xs-12 col-md-10 col-md-offset-1">Tags: {{painting.tags}}</h2>
+    <div class="col-xs-12 col-sm-6 col-lg-3 paintingSampleImage">
+      <img src="{{painting.img_url}}" alt="" class="center-block" width="300">
     </div>
     <div class="col-xs-12 col-sm-6 col-lg-3 artistSampleImage">
       <img src="{{artist.img_url2}}" alt="" class="center-block" width="300">
