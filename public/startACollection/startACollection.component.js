@@ -13,7 +13,7 @@
     const vm = this;
 
     vm.$onInit = () => {
-      vm.form = true;
+      vm.form = false;
       vm.confirmation = false;
       vm.checkout = false;
     }
