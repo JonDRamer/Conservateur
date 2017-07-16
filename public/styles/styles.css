@@ -15,7 +15,7 @@ a {
 
 .link {
   /*text-decoration: underline;*/
-  color: blue;
+  color: #00008B;
 }
 
 .navbar {
@@ -259,6 +259,7 @@ footer {
 .artistProfile {
   margin-top: 5vh;
   margin-bottom: 5vh;
+  box-shadow: 2px 3px 13px -4px rgba(0, 0, 0, 0.75);
 }
 
 .headshot {
