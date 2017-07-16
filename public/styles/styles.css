@@ -5,6 +5,7 @@ body {
   font-weight: 300;*/
   /*font-family: 'Bellefair', serif;*/
   font-family: 'Assistant', sans-serif;
+  font-weight: 200;
 }
 
 a {
@@ -207,6 +208,11 @@ h1 {
   text-align: center;
   background-color: #D2CDBE;
   margin-bottom: 5vh;
+  font-weight: 400;
+}
+
+.total {
+  font-weight: 600;
 }
 
 .consultationForm {
