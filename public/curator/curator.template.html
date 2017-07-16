@@ -35,25 +35,27 @@
 
 <section ng-repeat="artist in $ctrl.artists | filter:searchText | orderBy: name" class="container artistProfile">
   <div class="row">
-    <img src="{{artist.headshot}}" alt="" class="img-responsive center-block headshot">
-    <h1 class="col-xs-12 col-md-10 col-md-offset-1">{{artist.name}}</h1>
-    <h2 class="col-xs-12 col-md-10 col-md-offset-1">Store: <a target="_blank" href="{{artist.store}}">{{artist.store}}</a></h2>
-    <h2 class="col-xs-12 col-md-10 col-md-offset-1">Bio:</h2>
-    <h3 class="col-xs-12 col-md-10 col-md-offset-1">{{artist.bio}}</h3>
-    <h2 class="col-xs-12 col-md-10 col-md-offset-1">Tags:</h2>
-    <h3 class="col-xs-12 col-md-10 col-md-offset-1">{{artist.tags}}</h3>
-    <h2 class="col-xs-12 col-md-10 col-md-offset-1">Samples:</h2>
-    <div class="col-xs-12 col-sm-6 col-lg-3 artistSampleImage">
-      <img src="{{artist.img_url1}}" alt="" class="center-block" width="300">
-    </div>
-    <div class="col-xs-12 col-sm-6 col-lg-3 artistSampleImage">
-      <img src="{{artist.img_url2}}" alt="" class="center-block" width="300">
-    </div>
-    <div class="col-xs-12 col-sm-6 col-lg-3 artistSampleImage">
-      <img src="{{artist.img_url3}}" alt="" class="center-block" width="300">
-    </div>
-    <div class="col-xs-12 col-sm-6 col-lg-3 artistSampleImage">
-      <img src="{{artist.img_url4}}" alt="" class="center-block" width="300">
+    <div class="col-xs-12 col-md-6">
+      <div><img src="{{artist.headshot}}" alt="" class="headshot"></div>
+      <h1>{{artist.name}}</h1>
+      <h2>Store: <a target="_blank" href="{{artist.store}}">{{artist.store}}</a></h2>
+      <h2>Bio:</h2>
+      <h3>{{artist.bio}}</h3>
+      <h2>Tags:</h2>
+      <h3>{{artist.tags}}</h3>
+      <h2>Samples:</h2>
+      <div class="artistSampleImage">
+        <img src="{{artist.img_url1}}" alt="" class="center-block" width="300">
+      </div>
+      <div class="artistSampleImage">
+        <img src="{{artist.img_url2}}" alt="" class="center-block" width="300">
+      </div>
+      <div class="artistSampleImage">
+        <img src="{{artist.img_url3}}" alt="" class="center-block" width="300">
+      </div>
+      <div class="artistSampleImage">
+        <img src="{{artist.img_url4}}" alt="" class="center-block" width="300">
+      </div>
     </div>
   </div>
 </section>

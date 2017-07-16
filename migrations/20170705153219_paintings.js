@@ -7,8 +7,6 @@ exports.up = (knex, Promise) => {
       .notNullable();
     table.text('description')
       .notNullable();
-    table.string('artist')
-      .notNullable();
     table.text('size')
       .notNullable();
     table.decimal('price')
