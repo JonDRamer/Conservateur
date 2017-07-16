@@ -52,6 +52,86 @@
   </div>
 </div>
 
+<section class="container">
+  <div class="row">
+    <h1 class="questionHeader">OR</h1>
+      <a ui-sref="howItWorks" ng-click="$ctrl.form=!$ctrl.form"><button type="button" class="col-xs-12 col-md-4 col-md-offset-4 collectButton">Ask Us A Question</button></a>
+  </div>
+</section>
+
+<!-- CONSULTATION FORM -->
+<form class="container consultationForm" name="$ctrl.consultation" ng-show="$ctrl.form" novalidate>
+
+  <!--      Customer Name       -->
+  <div class="row" ng-class="{'has-error' : $ctrl.consultation.name.$dirty && $ctrl.consultation.name.$invalid,
+                  'has-success': $ctrl.consultation.name.$valid}">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <label for="name">Name</label>
+      <input name="name" id="name" class="form-control" ng-model="$ctrl.customer.name" ng-minlength="3" ng-maxlength="20" required>
+      <div class="error" ng-show="$ctrl.consultation.name.$dirty && $ctrl.consultation.name.$invalid">
+          <small class="error" ng-show="$ctrl.consultation.name.$error.required">
+              Name is a required field
+          </small>
+          <small class="error" ng-show="$ctrl.consultation.name.$error.minlength">
+              Name must be at least 3 characters
+          </small>
+          <small class="error" ng-show="$ctrl.consultation.name.$error.maxlength">
+              Name cannot be more that 20 characters
+          </small>
+      </div>
+    </div>
+  </div>
+
+  <!--      Customer Email       -->
+  <div class="row" ng-class="{'has-error' : $ctrl.consultation.email.$dirty && $ctrl.consultation.email.$invalid,
+                  'has-success': $ctrl.consultation.email.$valid}">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <label for="email">Email</label>
+      <input name="email" id="email" class="form-control" ng-model="$ctrl.customer.email" ng-minlength="10" ng-maxlength="40" required>
+      <div class="error" ng-show="$ctrl.consultation.email.$dirty && $ctrl.consultation.email.$invalid">
+          <small class="error" ng-show="$ctrl.consultation.email.$error.required">
+              Email is a required field
+          </small>
+          <small class="error" ng-show="$ctrl.consultation.email.$error.minlength">
+              Email must be at least 10 characters
+          </small>
+          <small class="error" ng-show="$ctrl.consultation.email.$error.maxlength">
+              Email cannot be more that 40 characters
+          </small>
+      </div>
+    </div>
+  </div>
+
+  <!--      Question      -->
+  <div class="row" ng-class="{'has-error' : $ctrl.consultation.question.$dirty && $ctrl.consultation.question.$invalid,
+                  'has-success': $ctrl.consultation.question.$valid}">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <label for="question">Question</label>
+      <input name="question" id="question" class="form-control" ng-model="$ctrl.customer.question" ng-minlength="3" ng-maxlength="20" required>
+      <div class="error" ng-show="$ctrl.consultation.question.$dirty && $ctrl.consultation.question.$invalid">
+          <small class="error" ng-show="$ctrl.consultation.question.$error.required">
+              Question is a required field
+          </small>
+          <small class="error" ng-show="$ctrl.consultation.question.$error.minlength">
+              Question must be at least 3 characters
+          </small>
+          <small class="error" ng-show="$ctrl.consultation.question.$error.maxlength">
+              Question cannot be more that 20 characters
+          </small>
+      </div>
+    </div>
+  </div>
+
+  <!---------   SUBMIT BUTTON    --------->
+  <div class=" row form-group">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <button ng-disabled="$ctrl.consultation.$invalid" ng-click="" type="submit" class="btn btn-primary submit">
+        Submit
+      </button>
+    </div>
+  </div>
+</form>
+
 
 <!-- FOOTER -->
 <div class="container">
