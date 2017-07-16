@@ -132,8 +132,8 @@ h1 {
 }
 
 .startACollectionHero {
-  height: 100vh;
-  background-image: url("../assets/startACollection.jpg");
+  height: 50vh;
+  background-image: url("../assets/startACollection2.jpg");
   background-size: cover;
 }
 
