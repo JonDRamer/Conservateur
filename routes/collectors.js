@@ -6,8 +6,6 @@ const nodemailer = require('nodemailer');
 
 router.route('/')
   .post((req, res, next) => {
-    // create reusable transporter object using the
-    // default SMTP transport
     let transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
       port: 465,
@@ -45,6 +43,51 @@ router.route('/')
     });
 
     transporter.sendMail(curatorMailOptions, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log('Message %s sent: %s', info.messageId, info.response);
+      res.send(info.response);
+    });
+  });
+
+router.route('/question')
+  .post((req, res, next) => {
+    let transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true, // secure:true for port 465, secure:false for port 587
+      auth: {
+        user: 'conservator.mailer@gmail.com',
+        pass: '`rUtvB4"hW'
+      }
+    });
+
+    let curatorMailOptions = {
+      from: `${req.body.email}`,
+      to: `sample.curator@gmail.com`,
+      subject: 'A Customer Would Like To Ask You A Question',
+      text: `${req.body.name} would like to ask you a question. \n\n<b>Question Details:</b>  \n\n<b>Email:</b> ${req.body.email} \n<b>Question:</b> ${req.body.question}`, // plain text body
+      html: `${req.body.name} would like to ask you a question. <br><br><b>Question Details:</b> <br><br><b>Name:</b> ${req.body.name} <br><b>Email:</b> ${req.body.email} <br><b>Question:</b> ${req.body.question}` // html body
+    };
+
+    transporter.sendMail(curatorMailOptions, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log('Message %s sent: %s', info.messageId, info.response);
+      res.send(info.response);
+    });
+
+    let questionMailOptions = {
+      from: '"Conservateur" <conservator.mailer@gmail.com>',
+      to: `${req.body.email}`,
+      subject: 'Thank You For Your Question',
+      text: `Thank you for considering Conservateur as a place to build your art collection.  We have received your question and a curator will be in touch with you shortly!  Have a great day!`, // plain text body
+      html: `Thank you for considering Conservateur as a place to build your art collection.  We have received your question and a curator will be in touch with you shortly!  Have a great day!` // html body
+    };
+
+    transporter.sendMail(questionMailOptions, (error, info) => {
       if (error) {
         return console.log(error);
       }

@@ -7,9 +7,9 @@
       templateUrl: './howItWorks/howItWorks.template.html'
     });
 
-  controller.$inject = ['$state'];
+  controller.$inject = ['$state', '$http'];
 
-  function controller($state) {
+  function controller($state, $http) {
     const vm = this;
 
     vm.onInit = () => {
@@ -22,8 +22,7 @@
         email: vm.consultation.email.$viewValue,
         question: vm.consultation.question.$viewValue
       }
-      console.log(vm.question);
-      // $http.post("/collectors/question", vm.question);
+      $http.post("/collectors/question", vm.question);
       delete vm.question;
       vm.consultation.$setPristine();
       vm.form = false;
