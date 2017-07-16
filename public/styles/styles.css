@@ -13,6 +13,11 @@ a {
   color: black;
 }
 
+.link {
+  /*text-decoration: underline;*/
+  color: blue;
+}
+
 .navbar {
   margin: 0;
 }
