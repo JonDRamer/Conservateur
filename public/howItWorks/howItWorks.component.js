@@ -14,6 +14,7 @@
 
     vm.onInit = () => {
       vm.form = false;
+      vm.confirmation = false;
     }
 
     vm.sendQuestion = () => {
@@ -26,7 +27,7 @@
       delete vm.question;
       vm.consultation.$setPristine();
       vm.form = false;
-
+      vm.confirmation = true;
     }
   }
 
