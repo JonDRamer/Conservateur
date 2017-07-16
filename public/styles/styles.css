@@ -125,6 +125,10 @@ h1 {
   text-decoration: none;
 }
 
+.questionHeader {
+  text-align: center;
+}
+
 .startACollectionHero {
   height: 100vh;
   background-image: url("../assets/startACollection.jpg");
