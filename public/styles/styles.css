@@ -43,7 +43,7 @@ h1 {
 }
 
 .description {
-  background-color: #D2B48C;
+  background-color: #D2CDBE;
 }
 
 .build {
@@ -77,28 +77,28 @@ h1 {
 }
 
 .collectButton {
-  background: #ccc3ab;
-  background-image: -webkit-linear-gradient(top, #ccc3ab, #ccc3ab);
-  background-image: -moz-linear-gradient(top, #ccc3ab, #ccc3ab);
-  background-image: -ms-linear-gradient(top, #ccc3ab, #ccc3ab);
-  background-image: -o-linear-gradient(top, #ccc3ab, #ccc3ab);
-  background-image: linear-gradient(to bottom, #ccc3ab, #ccc3ab);
+  background: #D2CDBE;
+  background-image: -webkit-linear-gradient(top, #D2CDBE, #D2CDBE);
+  background-image: -moz-linear-gradient(top, #D2CDBE, #D2CDBE);
+  background-image: -ms-linear-gradient(top, #D2CDBE, #D2CDBE);
+  background-image: -o-linear-gradient(top, #D2CDBE, #D2CDBE);
+  background-image: linear-gradient(to bottom, #D2CDBE, #D2CDBE);
   -webkit-border-radius: 5;
   -moz-border-radius: 5;
   border-radius: 5px;
-  color: #ffffff;
+  color: black;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
 }
 
 .collectButton:hover {
-  background: #D2B48C;
-  background-image: -webkit-linear-gradient(top, #D2B48C, #D2B48C);
-  background-image: -moz-linear-gradient(top, #D2B48C, #D2B48C);
-  background-image: -ms-linear-gradient(top, #D2B48C, #D2B48C);
-  background-image: -o-linear-gradient(top, #D2B48C, #D2B48C);
-  background-image: linear-gradient(to bottom, #D2B48C, #D2B48C);
+  background: #ccc3ab;
+  background-image: -webkit-linear-gradient(top, #ccc3ab, #ccc3ab);
+  background-image: -moz-linear-gradient(top, #ccc3ab, #ccc3ab);
+  background-image: -ms-linear-gradient(top, #ccc3ab, #ccc3ab);
+  background-image: -o-linear-gradient(top, #ccc3ab, #ccc3ab);
+  background-image: linear-gradient(to bottom, #ccc3ab, #ccc3ab);
   text-decoration: none;
 }
 
