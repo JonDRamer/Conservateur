@@ -14,10 +14,10 @@
 
     vm.$onInit = () => {
       vm.order = JSON.parse(localStorage.order);
+      vm.sendConfirmationEmail();
     }
 
     vm.sendConfirmationEmail = () => {
-      console.log(vm.order);
       $http.post("/collectors", vm.order);
     } //end of submitOrder function
 

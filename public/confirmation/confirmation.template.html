@@ -30,18 +30,12 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<!-- HERO IMAGE -->
-<section class="startACollectionHero">
-  <!-- HERO IMAGE LIVES HERE -->
-</section>
-
-<section class="container">
-  <div class="row confirmation">
-    <h1 col-xs-12>Your order has been processed!</h1>
-    <h3 col-xs-12>You should receive a confirmation email momentarily.</h3>
-    <h3 col-xs-12>Your Curator will be in touch shortly to discuss your piece in more detail.</h3>
-  </div>
-</section>
+<div class="container">
+  <section class="row confirmation">
+    <h1 class="col-xs-12">Thank you for your order!</h1>
+    <h3 class="col-xs-12">You will receive a confirmation email momentarily.</h3>
+  </section>
+</div>
 
 <section class="container">
   <div class="row summary">
@@ -55,14 +49,6 @@
     <h3 col-xs-12>Budget: {{$ctrl.order.budget}}</h3>
     <h3 col-xs-12>Timeline: {{$ctrl.order.timeline}}</h3>
     <h3 col-xs-12>Order Total: $19.99</h3>
-    <!---------   Confirmation Email BUTTON    --------->
-    <div class="row">
-      <div class="col-xs-12 col-md-6 col-md-offset-3">
-        <button ng-disabled="$ctrl.consultation.$invalid" ng-click="$ctrl.sendConfirmationEmail()" type="submit" class="btn btn-primary submit">
-          Send Email Confirmation
-        </button>
-      </div>
-    </div>
   </div>
 </section>
 

@@ -205,6 +205,8 @@ h1 {
 
 .confirmation {
   text-align: center;
+  background-color: #D2CDBE;
+  margin-bottom: 5vh;
 }
 
 .consultationForm {

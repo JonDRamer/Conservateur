@@ -32,13 +32,11 @@
         timeline: vm.consultation.timeline.$viewValue
       }
       localStorage.order = JSON.stringify(vm.order);
-      console.log(JSON.parse(localStorage.order));
       // $http.post("/collectors", vm.order);
       delete vm.customer;
       vm.consultation.$setPristine();
       vm.form = false;
       vm.checkout = true;
-      // vm.confirmation = true;
     } //end of submitOrder function
 
   } //end of controller function
