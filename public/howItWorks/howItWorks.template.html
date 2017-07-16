@@ -28,75 +28,27 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<!-- HERO IMAGE -->
-<section class="howItWorksHero">
-  <!-- HERO IMAGE LIVES HERE -->
-</section>
-
 <!-- How it works -->
 <div class="container howItWorks">
-  <div class="row cta">
-    <a ui-sref="startACollection"><button type="button" class="btn btn-default col-xs-8 col-xs-offset-2">Start a Collection</button></a>
+  <h1 class="col-xs-12 howHeader">How It Works</h1>
+
+  <div class="row book">
+    <div class="col-xs-12 col-md-6"><img class="infoGraphic" src="../assets/book.jpg" alt=""></div>
+    <p class="col-xs-12 col-md-6 howText">The first step to building your collection is to fill out our consultation form. The cost of booking a consultation is $19.99. What do you get for that price? A professional curator will review your information and reach out to you with some additional questions. After they have gathered all of your requirements they will search our extensive network of artists for pieces that meet your criteria. Next your curator will send you an email with 6 paintings that match your personal style and budget.</p>
   </div>
-</div>
 
-<!-- Login modal -->
-<div class="modal fade bs-example-modal-sm container" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-  <div class="modal-dialog modal-sm" role="document">
-    <div class="modal-content">
-      <!-- Login FORM -->
-      <form class="row" name="$ctrl.user" novalidate>
+  <div class="row email">
+    <div class="col-xs-12 col-md-6"><img class="infoGraphic" src="../assets/email.jpeg" alt=""></div>
+    <p class="col-xs-12 col-md-6 howText">Keep an eye out for an email from your curator. Review each personalized recommendation from your curator. Once you have selected that perfect piece for your space your curator will send you an invoice.</p>
+  </div>
 
-        <!--      User Email       -->
-        <div class="row" ng-class="{'has-error' : $ctrl.user.email.$dirty && $ctrl.user.email.$invalid,
-                        'has-success': $ctrl.user.email.$valid}">
-          <div class="col-xs-10 col-xs-offset-1">
-            <label for="email">Email</label>
-            <input name="email" id="email" class="form-control" ng-model="$ctrl.login.email" ng-minlength="3" ng-maxlength="20" required>
-            <div class="error" ng-show="$ctrl.user.email.$dirty && $ctrl.user.email.$invalid">
-                <small class="error" ng-show="$ctrl.user.email.$error.required">
-                    Email is a required field
-                </small>
-                <small class="error" ng-show="$ctrl.user.email.$error.minlength">
-                    Email must be at least 3 characters
-                </small>
-                <small class="error" ng-show="$ctrl.user.email.$error.maxlength">
-                    Email cannot be more that 20 characters
-                </small>
-            </div>
-          </div>
-        </div>
+  <div class="row hang">
+    <div class="col-xs-12 col-md-6"><img class="infoGraphic" src="../assets/hang.jpg" alt=""></div>
+    <p class="col-xs-12 col-md-6 howText">That's it!  Your painting will arrive in no time and you will be hanging that perfect new addition to your space!</p>
+  </div>
 
-        <!--      User Password       -->
-        <div class="row" ng-class="{'has-error' : $ctrl.user.password.$dirty && $ctrl.user.password.$invalid,
-                        'has-success': $ctrl.user.password.$valid}">
-          <div class="col-xs-10 col-xs-offset-1">
-            <label for="password">Password</label>
-            <input name="password" id="password" class="form-control" ng-model="$ctrl.login.password" ng-minlength="10" ng-maxlength="40" required>
-            <div class="error" ng-show="$ctrl.user.password.$dirty && $ctrl.user.password.$invalid">
-                <small class="error" ng-show="$ctrl.user.password.$error.required">
-                    Password is a required field
-                </small>
-                <small class="error" ng-show="$ctrl.user.password.$error.minlength">
-                    Password must be at least 10 characters
-                </small>
-                <small class="error" ng-show="$ctrl.user.password.$error.maxlength">
-                    Password cannot be more that 40 characters
-                </small>
-            </div>
-          </div>
-        </div>
-
-        <!---------   SUBMIT BUTTON    --------->
-        <div class="row form-group">
-          <div class="col-xs-10 col-xs-offset-1">
-            <button ng-disabled="$ctrl.user.$invalid" ng-click="" type="submit" class="btn btn-primary submit">
-              Login
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
+  <div class="row cta">
+    <a ui-sref="startACollection"><button type="button" class="col-xs-12 col-md-4 col-md-offset-4 collectButton">Get Started</button></a>
   </div>
 </div>
 
