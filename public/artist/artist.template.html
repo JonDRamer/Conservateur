@@ -21,8 +21,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li ng-click="$ctrl.getArtists()"><a ui-sref="">Artists</a></li>
-        <li><a ui-sref="">Paintings</a></li>
+        <li ng-click="$ctrl.getPaintings()"><a ui-sref="">Paintings</a></li>
+        <li><a ui-sref="">Add</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -30,11 +30,11 @@
 
 <section class="container">
   <div class="row">
-    <input type="search" class="form-control input-lg search-form" ng-model="searchText" placeholder="Search artists">
+    <input type="search" class="form-control input-lg search-form" ng-model="searchText" placeholder="Search Paintings">
   </div>
 </section>
 
-<section ng-repeat="artist in $ctrl.artists | filter:searchText | orderBy: name" class="container artistProfile">
+<section ng-repeat="painting in $ctrl.paintings | filter:searchText | orderBy: title" class="container paintingProfile">
   <div class="row">
     <img src="{{artist.headshot}}" alt="" class="img-responsive center-block headshot">
     <h1 class="col-xs-12 col-md-10 col-md-offset-1">{{artist.name}}</h1>

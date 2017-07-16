@@ -18,7 +18,9 @@
       $http.post("/auth/login", vm.login)
         .then((res) => {
           console.log(res.data);
-          $state.go('curator');
+          if (res.data.userId) {
+            $state.go('curator');
+          }
         });
     }
 

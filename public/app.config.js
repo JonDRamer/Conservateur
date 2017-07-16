@@ -20,29 +20,30 @@
         url: '/Home',
         component: 'home'
       })
-    $stateProvider
       .state({
         name: 'howItWorks',
         url: '/How-It-Works',
         component: 'howItWorks'
       })
-    $stateProvider
       .state({
         name: 'startACollection',
         url: '/Start-A-Collection',
         component: 'startACollection'
       })
-    $stateProvider
       .state({
         name: 'confirmation',
         url: '/Confirmation',
         component: 'confirmation'
       })
-    $stateProvider
       .state({
         name: 'curator',
         url: '/Curator',
         component: 'curator'
+      })
+      .state({
+        name: 'artist',
+        url: '/Artist',
+        component: 'artist'
       });
 
   }

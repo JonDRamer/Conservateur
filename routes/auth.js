@@ -57,6 +57,7 @@ router.route('/login')
             let matches = bcrypt.compareSync(req.body.password_digest, user.password_digest);
             if (matches) {
               req.session.userId = user.id;
+              // res.render('curator/curator.template.html');
               res.send(req.session);
             }
           } else {
