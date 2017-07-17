@@ -20,11 +20,22 @@
         })
     }
 
+    vm.getArtists = () => {
+      $http.get('/arists')
+        .then((artists) => {
+          vm.artists = artists.data;
+          return artists.data;
+        })
+    }
+
     vm.addArtist = (artist) => {
       vm.artists.push(vm.artist)
       $http.post('/artists', vm.artist)
-        .then(function(res) {}, function(res) {
-          console.log(res);
+        .then(function(response) {
+          console.log("hey");
+          return response.data;
+        }, function(response) {
+          console.log(response);
         })
       vm.form = false;
       delete vm.artist;
@@ -32,26 +43,13 @@
     };
 
     vm.deleteArtist = (artist) => {
-      vm.artists[vm.artists.indexOf(artist)] = {
-        name: "",
-        store: "",
-        bio: "",
-        tags: "",
-        headshot: "",
-        img_url1: "",
-        img_url2: "",
-        img_url3: "",
-        img_url4: ""
-      }
-
-      // vm.artiststwo = null
-      console.log(vm.artists);
-
-      // console.log(vm.artists);
-      // $http.delete(`/artists/${artist.id}`)
-      //   .then(function(res) {}, function(res) {
-      //     console.log(res);
-      //   });
+      $http.delete(`/artists/${artist.id}`)
+        .then(function(response) {
+          console.log(response.data);
+          return response.data;
+        }, function(response) {
+          return response;
+        });
     };
 
   }

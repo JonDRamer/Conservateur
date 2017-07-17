@@ -4,11 +4,10 @@
   angular.module('app', ['ui.router'])
     .config(config);
 
-  config.inject = ["$stateProvider", "$urlServiceProvider", "$locationProvider"];
+  config.inject = ["$stateProvider", "$urlServiceProvider"];
 
-  function config($stateProvider, $urlServiceProvider, $locationProvider) {
+  function config($stateProvider, $urlServiceProvider) {
 
-    // $locationProvider.html5Mode(true);
 
     $urlServiceProvider.rules.otherwise({
       state: 'home'

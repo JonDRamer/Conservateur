@@ -19,7 +19,7 @@
   "homepage": "https://github.com/JonDRamer/Conservator#readme",
   "dependencies": {
     "@uirouter/angularjs": "^1.0.5",
-    "angular-ui-router": "^1.0.0-rc.1",
+    "angular-ui-router": "^1.0.3",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
