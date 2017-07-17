@@ -16,7 +16,6 @@ exports.seed = function(knex, Promise) {
             img_url2: 'https://static1.squarespace.com/static/5501ef32e4b0c98f96ada1cc/57afe4c42e69cf0f1566ee99/57afe4cac534a5bee9bd2d44/1471145403554/The+Valley+Glows.jpg',
             img_url3: 'https://static1.squarespace.com/static/5501ef32e4b0c98f96ada1cc/57afe4c42e69cf0f1566ee99/57f3db7b579fb34674c099ec/1475599330613/Dusk+In+The+Chisos.jpg?format=1000w',
             img_url4: 'https://static1.squarespace.com/static/5501ef32e4b0c98f96ada1cc/57afe4c42e69cf0f1566ee99/57f3db7b579fb34674c099ec/1475599330613/Dusk+In+The+Chisos.jpg?format=1000w',
-            user_id: 1
           },
           {
             name: 'Katie Craig',
@@ -28,7 +27,6 @@ exports.seed = function(knex, Promise) {
             img_url2: 'https://static1.squarespace.com/static/52604aa5e4b03ad13666023d/54eb805be4b0904aceb8f2cd/592e0f0a3a0411d38a6dfe2d/1496190736989/June_Katie+Craig+.jpg?format=750w',
             img_url3: 'https://static1.squarespace.com/static/52604aa5e4b03ad13666023d/54eb805be4b0904aceb8f2cd/5888b728197aea16318bd344/1485354809083/Katie+Craig_Art+Show_In+All+Things_Umbrella+Gallery.JPG?format=1500w',
             img_url4: 'https://static1.squarespace.com/static/52604aa5e4b03ad13666023d/54eb805be4b0904aceb8f2cd/592e1022c534a537fbb07746/1496191018634/Gordon%27s+Sky+2+_Katie+Craig+.jpg?format=1500w',
-            user_id: 2
           }
         ]);
     });

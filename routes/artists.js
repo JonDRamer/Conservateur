@@ -11,28 +11,24 @@ router.route('/')
       .catch(err => next(err));
   })
   .post((req, res, next) => {
-    knex('users')
+    knex('artists')
       .insert({
-        email: req.body.email,
-        password_digest: req.body.password_digest,
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        artist: req.body.artist,
-        collector: req.body.collector,
-        curator: req.body.curator
+        name: req.body.name,
+        store: req.body.store,
+        bio: req.body.bio,
+        tags: req.body.tags,
+        headshot: req.body.headshot,
+        img_url1: req.body.img_url1,
+        img_url2: req.body.img_url2,
+        img_url3: req.body.img_url3,
+        img_url4: req.body.img_url4,
       })
       .returning('*')
-      .then((users) => {
-        knex('artists')
-          .insert({
-            bio: req.body.bio,
-            user_id: users[0].id
-          })
-          .returning('*', users)
-          .then(artists => res.json(`${users[0].first_name} ${users[0].last_name}'s bio: ${artists[0].bio} was successfully added to the artist's table.`))
-          .catch(err => next(err));
+      .then((artist) => {
+        console.log(`${artist[0].name} was successfully added to the system.`);
       })
-  })
+      .catch(err => next(err));
+  });
 
 router.route('/:artist_id')
   .get((req, res, next) => {

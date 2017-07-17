@@ -13,6 +13,7 @@
     const vm = this;
 
     vm.$onInit = () => {
+      vm.form = true;
       $('body')
         .animate({
           scrollTop: 0

@@ -21,12 +21,6 @@ exports.up = (knex, Promise) => {
       .notNullable();
     table.string('img_url4')
       .notNullable();
-    table.integer('user_id')
-      .notNullable()
-      .references('id')
-      .inTable('users')
-      .onDelete('CASCADE')
-      .index();
   })
 };
 
