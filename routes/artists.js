@@ -21,7 +21,7 @@ router.route('/')
         img_url1: req.body.img_url1,
         img_url2: req.body.img_url2,
         img_url3: req.body.img_url3,
-        img_url4: req.body.img_url4,
+        img_url4: req.body.img_url4
       })
       .returning('*')
       .then((artist) => {

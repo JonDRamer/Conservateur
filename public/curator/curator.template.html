@@ -35,14 +35,14 @@
 </section>
 
 <!-- NEW ARTIST FORM -->
-<form class="container newArtistForm" name="$ctrl.newArtist" ng-show="$ctrl.form" novalidate>
+<form class="container" name="$ctrl.newArtist" ng-show="$ctrl.form" novalidate>
 
   <!--      Artist's Name       -->
   <div class="row" ng-class="{'has-error' : $ctrl.newArtist.name.$dirty && $ctrl.newArtist.name.$invalid,
                   'has-success': $ctrl.newArtist.name.$valid}">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
       <label for="name">Name</label>
-      <input name="name" id="name" class="form-control" ng-model="$ctrl.customer.name" ng-minlength="3" ng-maxlength="20" required>
+      <input name="name" id="name" class="form-control" ng-model="$ctrl.artist.name" ng-minlength="3" ng-maxlength="20" placeholder="Enter name here" required>
       <div class="error" ng-show="$ctrl.newArtist.name.$dirty && $ctrl.newArtist.name.$invalid">
           <small class="error" ng-show="$ctrl.newArtist.name.$error.required">
               Name is a required field
@@ -57,155 +57,152 @@
     </div>
   </div>
 
-  <!--      Artist's Email       -->
-  <div class="row" ng-class="{'has-error' : $ctrl.newArtist.email.$dirty && $ctrl.newArtist.email.$invalid,
-                  'has-success': $ctrl.newArtist.email.$valid}">
+  <!--      Artist's Store       -->
+  <div class="row" ng-class="{'has-error' : $ctrl.newArtist.store.$dirty && $ctrl.newArtist.store.$invalid,
+                  'has-success': $ctrl.newArtist.store.$valid}">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <label for="email">Email</label>
-      <input name="email" id="email" class="form-control" ng-model="$ctrl.customer.email" ng-minlength="10" ng-maxlength="40" required>
-      <div class="error" ng-show="$ctrl.newArtist.email.$dirty && $ctrl.newArtist.email.$invalid">
-          <small class="error" ng-show="$ctrl.newArtist.email.$error.required">
-              Email is a required field
+      <label for="store">Store</label>
+      <input name="store" type="url" id="store" class="form-control" ng-model="$ctrl.artist.store" placeholder="eg. https://www.katiramer.com" required>
+      <div class="error" ng-show="$ctrl.newArtist.store.$dirty && $ctrl.newArtist.store.$invalid">
+          <small class="error" ng-show="$ctrl.newArtist.store.$error.required">
+              Store is a required field
           </small>
-          <small class="error" ng-show="$ctrl.newArtist.email.$error.minlength">
-              Email must be at least 10 characters
-          </small>
-          <small class="error" ng-show="$ctrl.newArtist.email.$error.maxlength">
-              Email cannot be more that 40 characters
+          <small class="error" ng-show="$ctrl.newArtist.store.$error.url">
+              Must be a valid URL
           </small>
       </div>
     </div>
   </div>
 
-  <!--      Artist's City       -->
-  <div class="row" ng-class="{'has-error' : $ctrl.newArtist.city.$dirty && $ctrl.newArtist.city.$invalid,
-                  'has-success': $ctrl.newArtist.city.$valid}">
+  <!--      Artist's Bio       -->
+  <div class="row" ng-class="{'has-error' : $ctrl.newArtist.bio.$dirty && $ctrl.newArtist.bio.$invalid,
+                  'has-success': $ctrl.newArtist.bio.$valid}">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <label for="city">City</label>
-      <input name="city" id="city" class="form-control" ng-model="$ctrl.customer.city" ng-minlength="3" ng-maxlength="20" required>
-      <div class="error" ng-show="$ctrl.newArtist.city.$dirty && $ctrl.newArtist.city.$invalid">
-          <small class="error" ng-show="$ctrl.newArtist.city.$error.required">
-              City is a required field
+      <label for="bio">Bio</label>
+      <textarea name="bio" id="bio" class="form-control" ng-model="$ctrl.artist.bio" ng-minlength="10" ng-maxlength="300" placeholder="Tell us about yourself" required></textarea>
+      <div class="error" ng-show="$ctrl.newArtist.bio.$dirty && $ctrl.newArtist.bio.$invalid">
+          <small class="error" ng-show="$ctrl.newArtist.bio.$error.required">
+              Bio is a required field
           </small>
-          <small class="error" ng-show="$ctrl.newArtist.city.$error.minlength">
-              City must be at least 3 characters
+          <small class="error" ng-show="$ctrl.newArtist.bio.$error.minlength">
+              Bio must be at least 10 characters
           </small>
-          <small class="error" ng-show="$ctrl.newArtist.city.$error.maxlength">
-              City cannot be more that 20 characters
+          <small class="error" ng-show="$ctrl.newArtist.bio.$error.maxlength">
+              Bio cannot be more than 300 characters
           </small>
       </div>
     </div>
   </div>
 
-  <!--      Artist's State       -->
-  <div class="row" ng-class="{'has-error' : $ctrl.newArtist.state.$dirty && $ctrl.newArtist.state.$invalid,
-                  'has-success': $ctrl.newArtist.state.$valid}">
+  <!--      Artist's Tags       -->
+  <div class="row" ng-class="{'has-error' : $ctrl.newArtist.tags.$dirty && $ctrl.newArtist.tags.$invalid,
+                  'has-success': $ctrl.newArtist.tags.$valid}">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <label for="state">State</label>
-      <input name="state" id="state" class="form-control" ng-model="$ctrl.customer.state" ng-minlength="2" ng-maxlength="20" required>
-      <div class="error" ng-show="$ctrl.newArtist.state.$dirty && $ctrl.newArtist.state.$invalid">
-          <small class="error" ng-show="$ctrl.newArtist.state.$error.required">
-              State is a required field
+      <label for="tags">Tags</label>
+      <textarea name="tags" id="tags" class="form-control" ng-model="$ctrl.artist.tags" ng-minlength="10" ng-maxlength="300" placeholder="mountains, snow, trees" required></textarea>
+      <div class="error" ng-show="$ctrl.newArtist.tags.$dirty && $ctrl.newArtist.tags.$invalid">
+          <small class="error" ng-show="$ctrl.newArtist.tags.$error.required">
+              Tags is a required field
           </small>
-          <small class="error" ng-show="$ctrl.newArtist.state.$error.minlength">
-              State must be at least 2 characters
+          <small class="error" ng-show="$ctrl.newArtist.tags.$error.minlength">
+              Tags must be at least 10 characters
           </small>
-          <small class="error" ng-show="$ctrl.newArtist.state.$error.maxlength">
-              State cannot be more that 20 characters
+          <small class="error" ng-show="$ctrl.newArtist.tags.$error.maxlength">
+              Tags cannot be more that 300 characters
           </small>
       </div>
     </div>
   </div>
 
-  <!--      Artist's Style       -->
-  <div class="row" ng-class="{'has-error' : $ctrl.newArtist.style.$dirty && $ctrl.newArtist.style.$invalid,
-                  'has-success': $ctrl.newArtist.style.$valid}">
+  <!--      Artist's Headshot       -->
+  <div class="row" ng-class="{'has-error' : $ctrl.newArtist.headshot.$dirty && $ctrl.newArtist.headshot.$invalid,
+                  'has-success': $ctrl.newArtist.headshot.$valid}">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <label for="style">Tell Us About Your Style</label>
-      <textarea name="style" id="style" class="form-control" ng-model="$ctrl.customer.style" ng-minlength="5" ng-maxlength="300" required></textarea>
-      <div class="error" ng-show="$ctrl.newArtist.style.$dirty && $ctrl.newArtist.style.$invalid">
-          <small class="error" ng-show="$ctrl.newArtist.style.$error.required">
-              Style is a required field
+      <label for="headshot">Headshot</label>
+      <input name="headshot" type="url" id="headshot" class="form-control" ng-model="$ctrl.artist.headshot" placeholder="Enter headshot URL here" required>
+      <div class="error" ng-show="$ctrl.newArtist.headshot.$dirty && $ctrl.newArtist.headshot.$invalid">
+          <small class="error" ng-show="$ctrl.newArtist.headshot.$error.required">
+              Headshot is a required field
           </small>
-          <small class="error" ng-show="$ctrl.newArtist.style.$error.minlength">
-              Style must be at least 5 characters
-          </small>
-          <small class="error" ng-show="$ctrl.newArtist.style.$error.maxlength">
-              Style cannot be more that 300 characters
+          <small class="error" ng-show="$ctrl.newArtist.headshot.$error.url">
+              Must be a valid URL
           </small>
       </div>
     </div>
   </div>
 
-  <!--      Artist's URL       -->
-  <div class="row" ng-class="{'has-error' : $ctrl.newArtist.url.$dirty && $ctrl.newArtist.url.$invalid,
-                  'has-success': $ctrl.newArtist.url.$valid}">
+  <!--      Artist's URL1       -->
+  <div class="row" ng-class="{'has-error' : $ctrl.newArtist.img_url1.$dirty && $ctrl.newArtist.img_url1.$invalid,
+                  'has-success': $ctrl.newArtist.img_url1.$valid}">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <label for="url">Add a Link to Your Pinterest Board</label>
-      <input name="url" id="url" class="form-control" ng-model="$ctrl.customer.url" ng-minlength="10" ng-maxlength="100">
-      <div class="error" ng-show="$ctrl.newArtist.url.$dirty && $ctrl.newArtist.url.$invalid">
-          <small class="error" ng-show="$ctrl.newArtist.url.$error.required">
-              URL is a required field
+      <label for="img_url1">Upload a few images that best represent your work</label>
+      <input name="img_url1" type="url" id="img_url1" class="form-control" ng-model="$ctrl.artist.img_url1" placeholder="Image URL 1" required>
+      <div class="error" ng-show="$ctrl.newArtist.img_url1.$dirty && $ctrl.newArtist.img_url1.$invalid">
+          <small class="error" ng-show="$ctrl.newArtist.img_url1.$error.required">
+              URL1 is a required field
           </small>
-          <small class="error" ng-show="$ctrl.newArtist.url.$error.minlength">
-              URL must be at least 10 characters
-          </small>
-          <small class="error" ng-show="$ctrl.newArtist.url.$error.maxlength">
-              URL cannot be more that 100 characters
+          <small class="error" ng-show="$ctrl.newArtist.img_url1.$error.url">
+              Must be a valid URL
           </small>
       </div>
     </div>
   </div>
 
-  <!--      Artist's Space       -->
-  <div class="row" ng-class="{'has-error' : $ctrl.newArtist.space.$dirty && $ctrl.newArtist.space.$invalid,
-                  'has-success': $ctrl.newArtist.space.$valid}">
+  <!--      Artist's URL2       -->
+  <div class="row" ng-class="{'has-error' : $ctrl.newArtist.img_url2.$dirty && $ctrl.newArtist.img_url2.$invalid,
+                  'has-success': $ctrl.newArtist.img_url2.$valid}">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <label for="space">Tell Us About Your Space</label>
-      <textarea name="space" id="space" class="form-control" ng-model="$ctrl.customer.space" ng-minlength="10" ng-maxlength="300" placeholder="Include colors, dimensions, or other helpful details" required></textarea>
-      <div class="error" ng-show="$ctrl.newArtist.space.$dirty && $ctrl.newArtist.space.$invalid">
-          <small class="error" ng-show="$ctrl.newArtist.space.$error.required">
-              Space is a required field
+      <input name="img_url2" type="url" id="img_url2" class="form-control" ng-model="$ctrl.artist.img_url2" placeholder="Image URL 2" required>
+      <div class="error" ng-show="$ctrl.newArtist.img_url2.$dirty && $ctrl.newArtist.img_url2.$invalid">
+          <small class="error" ng-show="$ctrl.newArtist.img_url2.$error.required">
+              URL2 is a required field
           </small>
-          <small class="error" ng-show="$ctrl.newArtist.space.$error.minlength">
-              Space must be at least 10 characters
-          </small>
-          <small class="error" ng-show="$ctrl.newArtist.space.$error.maxlength">
-              Space cannot be more that 300 characters
+          <small class="error" ng-show="$ctrl.newArtist.img_url2.$error.url">
+              Must be a valid URL
           </small>
       </div>
     </div>
   </div>
 
-  <!--      Artist's Budget       -->
-  <div class="row" ng-class="{'has-error' : $ctrl.newArtist.budget.$dirty && $ctrl.newArtist.budget.$invalid,
-                  'has-success': $ctrl.newArtist.budget.$valid}">
+  <!--      Artist's URL3       -->
+  <div class="row" ng-class="{'has-error' : $ctrl.newArtist.img_url3.$dirty && $ctrl.newArtist.img_url3.$invalid,
+                  'has-success': $ctrl.newArtist.img_url3.$valid}">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <label for="budget">Budget</label>
-      <input name="budget" id="budget" class="form-control" ng-model="$ctrl.customer.budget" placeholder="$200.00" required>
-      <div class="error" ng-show="$ctrl.newArtist.budget.$dirty && $ctrl.newArtist.budget.$invalid">
-          <small class="error" ng-show="$ctrl.newArtist.budget.$error.required">
-              Budget is a required field
+      <input name="img_url3" type="url" id="img_url3" class="form-control" ng-model="$ctrl.artist.img_url3" placeholder="Image URL 3" required>
+      <div class="error" ng-show="$ctrl.newArtist.img_url3.$dirty && $ctrl.newArtist.img_url3.$invalid">
+          <small class="error" ng-show="$ctrl.newArtist.img_url3.$error.required">
+              Image URL 3 is a required field
+          </small>
+          <small class="error" ng-show="$ctrl.newArtist.img_url3.$error.url">
+              Must be a valid URL
           </small>
       </div>
     </div>
   </div>
 
-  <!--      Artist's Timeline       -->
-  <div class="row" ng-class="{'has-error' : $ctrl.newArtist.timeline.$dirty && $ctrl.newArtist.timeline.$invalid,
-                  'has-success': $ctrl.newArtist.timeline.$valid}">
+  <!--      Artist's URL4       -->
+  <div class="row" ng-class="{'has-error' : $ctrl.newArtist.img_url4.$dirty && $ctrl.newArtist.img_url4.$invalid,
+                  'has-success': $ctrl.newArtist.img_url4.$valid}">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <label for="timeline">Timeline</label>
-      <input name="timeline" id="timeline" class="form-control" ng-model="$ctrl.customer.timeline" placeholder="Optional">
+      <input name="img_url4" type="url" id="img_url4" class="form-control" ng-model="$ctrl.artist.img_url4" placeholder="Image URL 4" required>
+      <div class="error" ng-show="$ctrl.newArtist.img_url4.$dirty && $ctrl.newArtist.img_url4.$invalid">
+          <small class="error" ng-show="$ctrl.newArtist.img_url4.$error.required">
+              Image URL 4 is a required field
+          </small>
+          <small class="error" ng-show="$ctrl.newArtist.img_url4.$error.url">
+              Must be a valid URL
+          </small>
+      </div>
     </div>
   </div>
+
 
 
   <!---------   SUBMIT BUTTON    --------->
   <div class=" row form-group">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <button ng-disabled="$ctrl.newArtist.$invalid" ng-click="$ctrl.proceedToCheckout(newArtist)" type="submit" class="btn btn-primary submit">
-        Proceed to Checkout
+      <button ng-disabled="$ctrl.newArtist.$invalid" ng-click="$ctrl.addArtist(newArtist)" type="submit" class="btn btn-primary submit">
+        Add Artist
       </button>
     </div>
   </div>

@@ -28,6 +28,17 @@
         })
     }
 
+    vm.addArtist = (artist) => {
+      vm.form = false;
+      $http.post('/artists', vm.artist)
+        .then(() => {
+          $http.get('/artists')
+            .then((res) => {
+              vm.artists = res.data;
+            })
+        })
+    }
+
   }
 
 }());
