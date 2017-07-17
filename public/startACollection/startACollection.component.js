@@ -7,9 +7,9 @@
       templateUrl: './startACollection/startACollection.template.html'
     });
 
-  controller.$inject = ['$state', '$http'];
+  controller.$inject = ['$http'];
 
-  function controller($state, $http) {
+  function controller($http) {
     const vm = this;
 
     vm.$onInit = () => {

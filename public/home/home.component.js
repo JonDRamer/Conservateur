@@ -7,17 +7,12 @@
       templateUrl: './home/home.template.html'
     });
 
-  controller.$inject = ['$state', '$http'];
+  controller.$inject = ['$http'];
 
-  function controller($state, $http) {
+  function controller($http) {
     const vm = this;
 
-    vm.$onInit = () => {
-      $('body')
-        .animate({
-          scrollTop: 0
-        }, 0);
-    }
+    vm.$onInit = () => {}
 
     vm.signIn = () => {
       $http.post("/auth/login", vm.login)
