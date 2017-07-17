@@ -16,7 +16,7 @@
       $('body')
         .animate({
           scrollTop: 0
-        }, 800);
+        }, 0);
     }
 
     vm.signIn = () => {

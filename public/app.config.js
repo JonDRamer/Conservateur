@@ -38,12 +38,7 @@
       .state({
         name: 'curator',
         url: '/Curator',
-        component: 'curator'
-      })
-      .state({
-        name: 'artist',
-        url: '/Artist',
-        component: 'artist'
+        component: 'curator' 
       });
 
   }

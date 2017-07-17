@@ -13,10 +13,6 @@
     const vm = this;
 
     vm.$onInit = () => {
-      $('body')
-        .animate({
-          scrollTop: 0
-        }, 0);
       vm.form = false;
       vm.confirmation = false;
       vm.checkout = false;
