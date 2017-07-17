@@ -18,6 +18,12 @@ a {
   color: #00008B;
 }
 
+.glyphicon {
+  margin: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 .navbar {
   margin: 0;
 }

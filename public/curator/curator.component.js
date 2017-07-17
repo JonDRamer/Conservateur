@@ -13,7 +13,7 @@
     const vm = this;
 
     vm.$onInit = () => {
-      vm.form = true;
+      vm.form = false;
       $('body')
         .animate({
           scrollTop: 0
@@ -23,21 +23,27 @@
 
     vm.getArtists = () => {
       $http.get('/artists')
-        .then((res) => {
-          vm.artists = res.data;
+        .then((artists) => {
+          vm.artists = artists.data;
         })
     }
 
     vm.addArtist = (artist) => {
-      vm.form = false;
       $http.post('/artists', vm.artist)
         .then(() => {
-          $http.get('/artists')
-            .then((res) => {
-              vm.artists = res.data;
-            })
-        })
-    }
+          vm.getArtists();
+        });
+      vm.form = false;
+      delete vm.artist;
+      vm.newArtist.$setPristine();
+    };
+
+    vm.deleteArtist = (artist) => {
+      $http.delete(`/artists/${artist.id}`)
+        .then(() => {
+          vm.getArtists();
+        });
+    };
 
   }
 

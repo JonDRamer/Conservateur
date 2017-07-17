@@ -51,11 +51,8 @@ router.route('/:artist_id')
       .del()
       .where('id', req.params.artist_id)
       .returning('*')
-      .then((artists) => {
-        knex('users')
-          .where('id', artists[0].user_id)
-          .first()
-          .then(user => res.json(`${user.first_name} ${user.last_name}'s artist bio was successfully deleted.`));
+      .then((artist) => {
+        console.log(`${artist[0].name} was successfully deleted`);
       })
       .catch(err => next(err));
   });
