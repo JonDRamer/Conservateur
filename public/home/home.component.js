@@ -12,7 +12,12 @@
   function controller($state, $http) {
     const vm = this;
 
-    vm.$onInit = () => {}
+    vm.$onInit = () => {
+      $('body')
+        .animate({
+          scrollTop: 0
+        }, 800);
+    }
 
     vm.signIn = () => {
       $http.post("/auth/login", vm.login)
@@ -20,6 +25,8 @@
           console.log(res.data);
           if (res.data.userId) {
             $state.go('curator');
+          } else {
+            console.log(res.data);
           }
         });
     }

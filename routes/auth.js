@@ -46,22 +46,20 @@ router.route('/register')
 
 router.route('/login')
   .post((req, res, next) => {
-    console.log("Request Body: ", req.body);
     knex('users')
       .where('email', req.body.email)
       .first()
       .then((user) => {
-        console.log("User: ", user);
         if (user.curator === true) {
           if (user) {
             let matches = bcrypt.compareSync(req.body.password_digest, user.password_digest);
             if (matches) {
               req.session.userId = user.id;
-              // res.render('curator/curator.template.html');
               res.send(req.session);
             }
           } else {
-            res.send('invalid password');
+            req.session.password = 'invalid';
+            res.send(req.session.password);
           }
         } else if (user.artist === true) {
           if (user) {
@@ -74,7 +72,8 @@ router.route('/login')
             }
           }
         } else {
-          res.send("invalid");
+          req.session.user = "invalid user";
+          res.send(req.session.user);
         }
       })
       .catch(err => {

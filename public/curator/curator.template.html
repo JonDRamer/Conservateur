@@ -35,7 +35,7 @@
 
 <section class="container">
   <div class="row">
-    <div ng-repeat="artist in $ctrl.artists | filter:searchText | orderBy: name" class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-1 artistProfile">
+    <div ng-repeat="artist in $ctrl.artists | filter:searchText | orderBy: name" class="col-xs-10 col-xs-offset-1 artistProfile">
         <div><img src="{{artist.headshot}}" alt="" class="img-responsive center-block headshot"></div>
         <h1>{{artist.name}}</h1>
         <h2><a target="_blank" href="{{artist.store}}" class="link">{{artist.store}}</a></h2>
@@ -45,16 +45,16 @@
         <h2>Samples:</h2>
         <div class="row">
           <div class="artistSampleImage col-xs-12">
-            <img src="{{artist.img_url1}}" alt="" width="200">
+            <img src="{{artist.img_url1}}" alt="" width="200" class="img-responsive center-block">
           </div>
           <div class="artistSampleImage col-xs-12">
-            <img src="{{artist.img_url2}}" alt="" width="200">
+            <img src="{{artist.img_url2}}" alt="" width="200" class="img-responsive center-block">
           </div>
           <div class="artistSampleImage col-xs-12">
-            <img src="{{artist.img_url3}}" alt="" width="200">
+            <img src="{{artist.img_url3}}" alt="" width="200" class="img-responsive center-block">
           </div>
           <div class="artistSampleImage col-xs-12">
-            <img src="{{artist.img_url4}}" alt="" width="200">
+            <img src="{{artist.img_url4}}" alt="" width="200" class="img-responsive center-block">
           </div>
         </div>
     </div>
