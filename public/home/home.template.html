@@ -84,16 +84,13 @@
                         'has-success': $ctrl.user.email.$valid}">
           <div class="col-xs-10 col-xs-offset-1">
             <label for="email">Email</label>
-            <input name="email" id="email" class="form-control" ng-model="$ctrl.login.email" ng-minlength="3" ng-maxlength="20" required>
+            <input name="email" type="email" id="email" class="form-control" ng-model="$ctrl.login.email" required>
             <div class="error" ng-show="$ctrl.user.email.$dirty && $ctrl.user.email.$invalid">
                 <small class="error" ng-show="$ctrl.user.email.$error.required">
                     Email is a required field
                 </small>
-                <small class="error" ng-show="$ctrl.user.email.$error.minlength">
-                    Email must be at least 3 characters
-                </small>
-                <small class="error" ng-show="$ctrl.user.email.$error.maxlength">
-                    Email cannot be more that 20 characters
+                <small class="error" ng-show="$ctrl.user.email.$error.email">
+                    Must be a valid email
                 </small>
             </div>
           </div>

@@ -16,12 +16,12 @@
 
     vm.signIn = () => {
       $http.post("/auth/login", vm.login)
-        .then((res) => {
-          console.log(res.data);
-          if (res.data.userId) {
+        .then((response) => {
+          console.log(response.data);
+          if (response.data.userId) {
             $state.go('curator');
           } else {
-            console.log(res.data);
+            console.log(response.data);
           }
         });
     }

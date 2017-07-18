@@ -7,9 +7,6 @@ const bcrypt = require('bcryptjs');
 
 
 router.route('/register')
-  .get((req, res, next) => {
-    res.render('auth/register')
-  })
   .post((req, res, next) => {
     if (req.body.email.trim() && req.body.password_digest.trim()) {
       const hash = bcrypt.hashSync(req.body.password_digest, 10);
@@ -32,9 +29,6 @@ router.route('/register')
           req.session.userId = user.id;
           res.status(200)
             .json(req.session);
-          // res.render('statics/home', {
-          //   loggedIn: true
-          // });
         })
         .catch(err => next(new Error(err)));
     } else {
@@ -55,25 +49,15 @@ router.route('/login')
             let matches = bcrypt.compareSync(req.body.password_digest, user.password_digest);
             if (matches) {
               req.session.userId = user.id;
-              res.send(req.session);
+              res.json(req.session);
             }
           } else {
             req.session.password = 'invalid';
-            res.send(req.session.password);
-          }
-        } else if (user.artist === true) {
-          if (user) {
-            let matches = bcrypt.compareSync(req.body.password_digest, user.password_digest);
-            if (matches) {
-              req.session.userId = user.id;
-              res.send(req.session);
-            } else {
-              res.send('invalid password');
-            }
+            res.json(req.session.password);
           }
         } else {
           req.session.user = "invalid user";
-          res.send(req.session.user);
+          res.json(req.session.user);
         }
       })
       .catch(err => {
