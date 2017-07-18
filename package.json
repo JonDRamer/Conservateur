@@ -4,7 +4,8 @@
   "description": "Conservator is a way for aspiring art collectors to receive curated artwork that fits their budget and style. They simply fill out a form with their requirements and an art consultant sends them recommendations of what they should buy. Once they find that perfect piece they can purchase the work through the site.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,6 @@
     "pg": "^6.4.0"
   },
   "devDependencies": {
-    "knex": "^0.13.0",
     "morgan": "^1.8.2"
   }
 }
