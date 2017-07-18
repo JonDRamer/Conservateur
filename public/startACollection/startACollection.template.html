@@ -73,16 +73,13 @@
                   'has-success': $ctrl.consultation.email.$valid}">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
       <label for="email">Email</label>
-      <input name="email" id="email" class="form-control" ng-model="$ctrl.customer.email" ng-minlength="10" ng-maxlength="40" required>
+      <input name="email" type="email" id="email" class="form-control" ng-model="$ctrl.customer.email" required>
       <div class="error" ng-show="$ctrl.consultation.email.$dirty && $ctrl.consultation.email.$invalid">
           <small class="error" ng-show="$ctrl.consultation.email.$error.required">
               Email is a required field
           </small>
-          <small class="error" ng-show="$ctrl.consultation.email.$error.minlength">
-              Email must be at least 10 characters
-          </small>
-          <small class="error" ng-show="$ctrl.consultation.email.$error.maxlength">
-              Email cannot be more that 40 characters
+          <small class="error" ng-show="$ctrl.consultation.email.$error.email">
+              Must be a valid email
           </small>
       </div>
     </div>
@@ -153,16 +150,13 @@
                   'has-success': $ctrl.consultation.url.$valid}">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
       <label for="url">Add a Link to Your Pinterest Board</label>
-      <input name="url" id="url" class="form-control" ng-model="$ctrl.customer.url" ng-minlength="10" ng-maxlength="100">
+      <input name="url" type="url" id="url" class="form-control" ng-model="$ctrl.customer.url">
       <div class="error" ng-show="$ctrl.consultation.url.$dirty && $ctrl.consultation.url.$invalid">
           <small class="error" ng-show="$ctrl.consultation.url.$error.required">
               URL is a required field
           </small>
-          <small class="error" ng-show="$ctrl.consultation.url.$error.minlength">
-              URL must be at least 10 characters
-          </small>
-          <small class="error" ng-show="$ctrl.consultation.url.$error.maxlength">
-              URL cannot be more that 100 characters
+          <small class="error" ng-show="$ctrl.consultation.url.$error.url">
+              Must be a valid URL
           </small>
       </div>
     </div>
@@ -193,7 +187,7 @@
                   'has-success': $ctrl.consultation.budget.$valid}">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
       <label for="budget">Budget</label>
-      <input name="budget" id="budget" class="form-control" ng-model="$ctrl.customer.budget" placeholder="$200.00" required>
+      <input name="budget" type="number" id="currency-default" class="form-control" ng-model="$ctrl.customer.budget" placeholder="$200.00" required>
       <div class="error" ng-show="$ctrl.consultation.budget.$dirty && $ctrl.consultation.budget.$invalid">
           <small class="error" ng-show="$ctrl.consultation.budget.$error.required">
               Budget is a required field
