@@ -14,10 +14,7 @@
 
     vm.$onInit = () => {
       vm.form = false;
-      $http.get('/artists')
-        .then((artists) => {
-          vm.artists = artists.data;
-        })
+      vm.getArtists();
     }
 
     vm.getArtists = () => {
@@ -31,25 +28,25 @@
     vm.addArtist = (artist) => {
       vm.artists.push(vm.artist)
       $http.post('/artists', vm.artist)
-        .then(function(response) {
+        .then((response) => {
           vm.getArtists();
+          vm.form = false;
+          delete vm.artist;
+          vm.newArtist.$setPristine();
           return response.data;
-        }, function(response) {
-          console.log("Promise rejected");
-        })
-      vm.form = false;
-      delete vm.artist;
-      vm.newArtist.$setPristine();
+        });
     };
 
     vm.deleteArtist = (artist) => {
+      // let begin = vm.artists.indexOf(artist);
+      // let end = vm.artists.indexOf(artist) + 1;
+      // vm.artists = vm.artists.slice(begin, end)
       $http.delete(`/artists/${artist.id}`)
-        .then(function(response) {
-          vm.getArtists();
-          console.log("It Worked");
+        .then((response) => {
+          // vm.getArtists();
+          vm.artists.splice(vm.artists.indexOf(artist), 1);
+
           return response.data;
-        }, function(response) {
-          console.log("Promise rejected");
         });
     };
 
