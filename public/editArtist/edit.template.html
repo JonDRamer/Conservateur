@@ -29,7 +29,7 @@
 </nav>
 
 <!-- Update ARTIST FORM -->
-<form class="container" name="$ctrl.artistUpdate" novalidate>
+<form class="container" name="$ctrl.artistUpdate" ng-show="$ctrl.form" novalidate>
   <div class="row">
     <h1 class="col-xs-12 questionHeader">New Artist Info</h1>
   </div>
@@ -198,7 +198,7 @@
   <!---------   SUBMIT BUTTON    --------->
   <div class="row form-group">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <button ng-disabled="$ctrl.artistUpdate.$invalid" ng-click="$ctrl.updateArtist(artistUpdate)" type="submit" class="btn btn-primary submit">
+      <button ng-click="$ctrl.updateArtist(artistUpdate)" type="submit" class="btn btn-primary submit">
         Update Artist
       </button>
     </div>

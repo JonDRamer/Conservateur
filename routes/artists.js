@@ -44,7 +44,7 @@ router.route('/:artist_id')
       .update(req.body)
       .where('id', req.params.artist_id)
       .returning('*')
-      .then(artists => res.json(artists[0]))
+      .then(artist => res.json(artist))
       .catch(err => next(err));
   })
   .delete((req, res, next) => {

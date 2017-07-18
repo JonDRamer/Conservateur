@@ -13,7 +13,7 @@
     const vm = this;
 
     vm.$onInit = () => {
-      vm.form = false;
+      vm.form = true;
       vm.getArtist();
     }
 
@@ -25,13 +25,13 @@
         })
     }
 
-    vm.deleteArtist = (artist) => {
-      $http.delete(`/artists/${artist.id}`)
-        .then((response) => {
-          vm.artist.splice(vm.artist.indexOf(artist), 1);
-          return response.data;
-        });
-    };
+    vm.updateArtist = () => {
+      $http.patch(`/artists/${$stateParams.id}`, vm.artist)
+        .then((artist) => {
+          vm.form = false;
+          return artist.data;
+        })
+    }
 
   }
 
