@@ -7,9 +7,9 @@
       templateUrl: './home/home.template.html'
     });
 
-  controller.$inject = ['$http'];
+  controller.$inject = ['$http', '$state'];
 
-  function controller($http) {
+  function controller($http, $state) {
     const vm = this;
 
     vm.$onInit = () => {}
@@ -17,7 +17,6 @@
     vm.signIn = () => {
       $http.post("/auth/login", vm.login)
         .then((response) => {
-          console.log(response.data);
           if (response.data.userId) {
             $state.go('curator');
           } else {
