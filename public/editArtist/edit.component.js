@@ -7,9 +7,9 @@
       templateUrl: './editArtist/edit.template.html'
     });
 
-  controller.$inject = ['$http'];
+  controller.$inject = ['$http', '$stateParams'];
 
-  function controller($http) {
+  function controller($http, $stateParams) {
     const vm = this;
 
     vm.$onInit = () => {
@@ -18,7 +18,7 @@
     }
 
     vm.getArtist = () => {
-      $http.get('/artists/${artist.id}')
+      $http.get(`/artists/${$stateParams.id}`)
         .then((artist) => {
           vm.artist = artist.data;
           return artist.data;
