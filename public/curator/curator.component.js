@@ -38,14 +38,9 @@
     };
 
     vm.deleteArtist = (artist) => {
-      // let begin = vm.artists.indexOf(artist);
-      // let end = vm.artists.indexOf(artist) + 1;
-      // vm.artists = vm.artists.slice(begin, end)
       $http.delete(`/artists/${artist.id}`)
         .then((response) => {
-          // vm.getArtists();
           vm.artists.splice(vm.artists.indexOf(artist), 1);
-
           return response.data;
         });
     };
