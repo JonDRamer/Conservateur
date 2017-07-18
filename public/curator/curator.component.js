@@ -21,7 +21,7 @@
     }
 
     vm.getArtists = () => {
-      $http.get('/arists')
+      $http.get('/artists')
         .then((artists) => {
           vm.artists = artists.data;
           return artists.data;
@@ -32,10 +32,10 @@
       vm.artists.push(vm.artist)
       $http.post('/artists', vm.artist)
         .then(function(response) {
-          console.log("hey");
+          vm.getArtists();
           return response.data;
         }, function(response) {
-          console.log(response);
+          console.log("Promise rejected");
         })
       vm.form = false;
       delete vm.artist;
@@ -45,10 +45,11 @@
     vm.deleteArtist = (artist) => {
       $http.delete(`/artists/${artist.id}`)
         .then(function(response) {
-          console.log(response.data);
+          vm.getArtists();
+          console.log("It Worked");
           return response.data;
         }, function(response) {
-          return response;
+          console.log("Promise rejected");
         });
     };
 

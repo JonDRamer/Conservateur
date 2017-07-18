@@ -26,6 +26,7 @@ router.route('/')
       .returning('*')
       .then((artist) => {
         console.log(`${artist[0].name} was successfully added to the system.`);
+        res.json(artist);
       })
       .catch(err => next(err));
   });
@@ -53,6 +54,7 @@ router.route('/:artist_id')
       .returning('*')
       .then((artist) => {
         console.log(`${artist[0].name} was successfully deleted`);
+        res.json(artist);
       })
       .catch(err => next(err));
   });
