@@ -38,6 +38,11 @@
         name: 'curator',
         url: '/Curator',
         component: 'curator' 
+      })
+      .state({
+        name: 'edit',
+        url: '/edit/:id',
+        component: 'edit'
       });
 
   }
