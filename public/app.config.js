@@ -41,7 +41,7 @@
       })
       .state({
         name: 'edit',
-        url: '/edit/:id',
+        url: '/Edit/:id',
         component: 'edit'
       });
 
