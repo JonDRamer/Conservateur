@@ -43,6 +43,11 @@
         name: 'edit',
         url: '/Edit/:id',
         component: 'edit'
+      })
+      .state({
+        name: 'register',
+        url: '/Register',
+        component: 'register'
       });
 
   }

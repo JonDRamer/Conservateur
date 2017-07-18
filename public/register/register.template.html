@@ -1,0 +1,172 @@
+<header class="container">
+  <div class="row">
+    <img class="logo col-xs-3" src="./assets/logo.png" alt="Brand Logo">
+    <h1 class="col-xs-9">CONSERVATEUR</h1>
+    <h3 class="col-xs-9">BUILD AN ORIGINAL COLLECTION</h3>
+  </div>
+</header>
+
+<!-- NAV  -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ui-sref="home">HOME</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!-- HERO IMAGE -->
+<section class="startACollectionHero">
+  <!-- HERO IMAGE LIVES HERE -->
+</section>
+
+<!-- Login FORM -->
+<form class="row" name="$ctrl.user" novalidate>
+
+  <!--      User Email       -->
+  <div class="row" ng-class="{'has-error' : $ctrl.user.email.$dirty && $ctrl.user.email.$invalid,
+                  'has-success': $ctrl.user.email.$valid}">
+    <div class="col-xs-10 col-xs-offset-1">
+      <label for="email">Email</label>
+      <input name="email" type="email" id="email" class="form-control" ng-model="$ctrl.login.email" required>
+      <div class="error" ng-show="$ctrl.user.email.$dirty && $ctrl.user.email.$invalid">
+          <small class="error" ng-show="$ctrl.user.email.$error.required">
+              Email is a required field
+          </small>
+          <small class="error" ng-show="$ctrl.user.email.$error.email">
+              Must be a valid email
+          </small>
+      </div>
+    </div>
+  </div>
+
+  <!--      User Password       -->
+  <div class="row" ng-class="{'has-error' : $ctrl.user.password.$dirty && $ctrl.user.password.$invalid,
+                  'has-success': $ctrl.user.password.$valid}">
+    <div class="col-xs-10 col-xs-offset-1">
+      <label for="password">Password</label>
+      <input name="password" type="password" id="password" class="form-control" ng-model="$ctrl.login.password_digest" ng-minlength="3" ng-maxlength="40" required>
+      <div class="error" ng-show="$ctrl.user.password.$dirty && $ctrl.user.password.$invalid">
+          <small class="error" ng-show="$ctrl.user.password.$error.required">
+              Password is a required field
+          </small>
+          <small class="error" ng-show="$ctrl.user.password.$error.minlength">
+              Password must be at least 3 characters
+          </small>
+          <small class="error" ng-show="$ctrl.user.password.$error.maxlength">
+              Password cannot be more that 40 characters
+          </small>
+      </div>
+    </div>
+  </div>
+
+  <!--      First Name       -->
+  <div class="row" ng-class="{'has-error' : $ctrl.user.first_name.$dirty && $ctrl.user.first_name.$invalid,
+                  'has-success': $ctrl.user.first_name.$valid}">
+    <div class="col-xs-10 col-xs-offset-1">
+      <label for="first_name">First Name</label>
+      <input name="first_name" id="name" class="form-control" ng-model="$ctrl.login.first_name" ng-minlength="3" ng-maxlength="20" required>
+      <div class="error" ng-show="$ctrl.user.first_name.$dirty && $ctrl.user.first_name.$invalid">
+          <small class="error" ng-show="$ctrl.user.first_name.$error.required">
+              First name is a required field
+          </small>
+          <small class="error" ng-show="$ctrl.user.first_name.$error.minlength">
+              First name must be at least 3 characters
+          </small>
+          <small class="error" ng-show="$ctrl.user.first_name.$error.maxlength">
+              First name cannot be more that 20 characters
+          </small>
+      </div>
+    </div>
+  </div>
+
+  <!--      Last Name       -->
+  <div class="row" ng-class="{'has-error' : $ctrl.user.last_name.$dirty && $ctrl.user.last_name.$invalid,
+                  'has-success': $ctrl.user.last_name.$valid}">
+    <div class="col-xs-10 col-xs-offset-1">
+      <label for="last_name">Last Name</label>
+      <input name="last_name" id="name" class="form-control" ng-model="$ctrl.login.last_name" ng-minlength="3" ng-maxlength="20" required>
+      <div class="error" ng-show="$ctrl.user.last_name.$dirty && $ctrl.user.last_name.$invalid">
+          <small class="error" ng-show="$ctrl.user.last_name.$error.required">
+              Last name is a required field
+          </small>
+          <small class="error" ng-show="$ctrl.user.last_name.$error.minlength">
+              Last name must be at least 3 characters
+          </small>
+          <small class="error" ng-show="$ctrl.user.last_name.$error.maxlength">
+              Last name cannot be more that 20 characters
+          </small>
+      </div>
+    </div>
+  </div>
+
+  <!--      Artist       -->
+  <div class="row" ng-class="{'has-error' : $ctrl.user.artist.$dirty && $ctrl.user.artist.$invalid,
+                  'has-success': $ctrl.user.artist.$valid}">
+    <div class="col-xs-10 col-xs-offset-1">
+      <label for="artist">Artist</label>
+      <input name="artist" id="name" class="form-control" ng-model="$ctrl.login.artist" ng-minlength="3" ng-maxlength="20" required>
+      <div class="error" ng-show="$ctrl.user.artist.$dirty && $ctrl.user.artist.$invalid">
+          <small class="error" ng-show="$ctrl.user.artist.$error.required">
+              Artist is a required field
+          </small>
+          <small class="error" ng-show="$ctrl.user.artist.$error.minlength">
+              Artist must be at least 3 characters
+          </small>
+          <small class="error" ng-show="$ctrl.user.artist.$error.maxlength">
+              Artist cannot be more that 20 characters
+          </small>
+      </div>
+    </div>
+  </div>
+
+  <!--      Curator       -->
+  <div class="row" ng-class="{'has-error' : $ctrl.user.curator.$dirty && $ctrl.user.curator.$invalid,
+                  'has-success': $ctrl.user.curator.$valid}">
+    <div class="col-xs-10 col-xs-offset-1">
+      <label for="curator">Curator</label>
+      <input name="curator" id="name" class="form-control" ng-model="$ctrl.login.curator" ng-minlength="3" ng-maxlength="20" required>
+      <div class="error" ng-show="$ctrl.user.curator.$dirty && $ctrl.user.curator.$invalid">
+          <small class="error" ng-show="$ctrl.user.curator.$error.required">
+              Curator is a required field
+          </small>
+          <small class="error" ng-show="$ctrl.user.curator.$error.minlength">
+              Curator must be at least 3 characters
+          </small>
+          <small class="error" ng-show="$ctrl.user.curator.$error.maxlength">
+              Curator cannot be more that 20 characters
+          </small>
+      </div>
+    </div>
+  </div>
+
+  <!---------   SUBMIT BUTTON    --------->
+  <div class="row form-group">
+    <div class="col-xs-10 col-xs-offset-1">
+      <button ng-disabled="$ctrl.user.$invalid" ng-click="$ctrl.signIn()" type="submit" class="collectButton">
+        Login
+      </button>
+    </div>
+  </div>
+</form>
+
+<!-- FOOTER -->
+<div class="container">
+  <footer class="row">
+    <a href=""><p class="col-xs-12 col-sm-4">CONTACT/SUPPORT</p></a>
+    <a href=""><p class="col-xs-12 col-sm-4">FAQ</p></a>
+    <a href=""><p class="col-xs-12 col-sm-4">ARTIST INQUIRIES</p></a>
+  </footer>
+</div>
