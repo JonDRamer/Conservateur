@@ -21,7 +21,7 @@ router.route('/')
       from: '"Conservateur" <conservator.mailer@gmail.com>',
       to: `${req.body.email}`,
       subject: 'Consultation Confirmation',
-      text: `Congratulations on your decision to build an original collection!  Your curator will be in touch shortly to chat. \n\n<b>Order Details:</b> \n\n<b>Name:</b> ${req.body.name} \n<b>Email:</b> ${req.body.email} \n<b>City:</b> ${req.body.city} \n<b>State:</b> ${req.body.state} \n<b>Style:</b> ${req.body.style} \n<b>Space:</b> ${req.body.space} \n<b>Budget:</b> ${req.body.budget} \n<b>Timeline:</b> ${req.body.timeline}`, // plain text body
+      text: `Congratulations on your decision to build an original collection!  Your curator will be in touch shortly to chat. \n\nOrder Details: \n\nName: ${req.body.name} \nEmail: ${req.body.email} \nCity: ${req.body.city} \nState: ${req.body.state} \nStyle: ${req.body.style} \nSpace: ${req.body.space} \nBudget: ${req.body.budget} \nTimeline: ${req.body.timeline}`, // plain text body
       html: `Congratulations on your decision to build an original collection!  Your curator will be in touch shortly to chat. <br><br><b>Order Details:</b> <br><br><b>Name:</b> ${req.body.name} <br><b>Email:</b> ${req.body.email} <br><b>City:</b> ${req.body.city} <br><b>State:</b> ${req.body.state} <br><b>Style:</b> ${req.body.style} <br><b>Space:</b> ${req.body.space} <br><b>Budget:</b> ${req.body.budget} <br><b>Timeline:</b> ${req.body.timeline}` // html body
     };
 
@@ -29,7 +29,7 @@ router.route('/')
       from: '"Conservateur" <conservator.mailer@gmail.com>',
       to: `sample.curator@gmail.com`,
       subject: 'Consultation Notification',
-      text: `A collector just booked a consultation!  Please reach out to them shortly to gather additional information about their piece. \n\n<b>Order Details:</b> \n\n<b>Name:</b> ${req.body.name} \n<b>Email:</b> ${req.body.email} \n<b>City:</b> ${req.body.city} \n<b>State:</b> ${req.body.state} \n<b>Style:</b> ${req.body.style} \n<b>Space:</b> ${req.body.space} \n<b>Budget:</b> ${req.body.budget} \n<b>Timeline:</b> ${req.body.timeline}`, // plain text body
+      text: `A collector just booked a consultation!  Please reach out to them shortly to gather additional information about their piece. \n\nOrder Details: \n\nName: ${req.body.name} \nEmail: ${req.body.email} \nCity: ${req.body.city} \nState: ${req.body.state} \nStyle: ${req.body.style} \nSpace: ${req.body.space} \nBudget: ${req.body.budget} \nTimeline: ${req.body.timeline}`, // plain text body
       html: `A collector just booked a consultation!  Please reach out to them shortly to gather additional information about their piece. <br><br><b>Order Details:</b> <br><br><b>Name:</b> ${req.body.name} <br><b>Email:</b> ${req.body.email} <br><b>City:</b> ${req.body.city} <br><b>State:</b> ${req.body.state} <br><b>Style:</b> ${req.body.style} <br><b>Space:</b> ${req.body.space} <br><b>Budget:</b> ${req.body.budget} <br><b>Timeline:</b> ${req.body.timeline}` // html body
     };
 
