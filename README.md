@@ -46,4 +46,4 @@
 
 
 ### Click The Image Below to See a Video Walkthrough
-[![Video]()
+[![Video](https://github.com/JonDRamer/Simon-Game/blob/master/screenshots/Play%20Button.jpg)](https://youtu.be/6cLoa6KLdSY)
