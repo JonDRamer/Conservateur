@@ -29,14 +29,21 @@
 ###### The biggest challenge for this project was also the most fun part of it. This is the first application that I ever built for someone else. I had to bring someone else's vision to life. The back and forth in meetings and multiple iterations on different functionality was both a challenge as well as an invaluable experience for me.  
 
 ### Screenshots
+
+#### Home Page
 ![App Screenshot](https://github.com/JonDRamer/Conservateur/blob/master/public/assets/Home%20Page.png)
-![App Screenshot]()
-![App Screenshot]()
-![App Screenshot]()
-![App Screenshot]()
-![App Screenshot]()
-![App Screenshot]()
-![App Screenshot]()
+
+#### How It Works
+![App Screenshot](https://github.com/JonDRamer/Conservateur/blob/master/public/assets/How%20it%20works.png)
+
+#### Start A Collection
+![App Screenshot](https://github.com/JonDRamer/Conservateur/blob/master/public/assets/Start%20a%20collection%20header.png)
+
+![App Screenshot](https://github.com/JonDRamer/Conservateur/blob/master/public/assets/StartACollection.png)
+
+#### Curator View
+![App Screenshot](https://github.com/JonDRamer/Conservateur/blob/master/public/assets/Curator%20view.png)
+
 
 ### Click The Image Below to See a Video Walkthrough
 [![Video]()
